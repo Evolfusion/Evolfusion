@@ -1,0 +1,87 @@
+:root {
+    --header-background:#ffffff80;
+    --main-background: linear-gradient(45deg, rgba(110, 57, 233, 0.8), rgba(237, 30, 121, 0.8));
+    /*     --home-color: #ffffff;
+    --home-hover: #03A9F4; */
+    --title-color: #ffffff;
+    --subtitle-color: #ED1E79;
+    --description-color: #DFDDE1;
+/*     --span-color: #ffffff; */
+  /*   --fa-check-color: #49E670;
+    --business-color: #ffffff; */
+    --btn-color:#ffffff;
+    --main-margin: 1rem 1rem;
+    --netbook-margin: 0 2.25rem;
+    --container-margin: 1rem 0;
+    --netbook-container: 1.25rem 0;
+    --list-margin: 0.8rem 0;
+    --title-typography: "Be Vietnam Pro", sans-serif; /* Agregar grosor bold */
+    --subtitle-typography: "Be Vietnam Pro", sans-serif; /* Agregar grosor regular/normal */
+    --description-typography: "Roboto", sans-serif;/* Agregar grosor regular/normal */
+    --title-size: 1rem;
+    --netbook-title: 1.5625rem;
+    --subtitle-size: .875rem;
+    --netbook-subtitle: 1.25rem;
+    --description-size: .75rem;
+    --netbook-description: 1rem;
+    --business-size: 1.25rem;
+    --home-size: 1.25rem;
+    --btn-size: .8125rem;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--main-background);
+    height: auto;
+}
+
+footer {
+    background-color: var(--header-background);
+}
+
+main{
+    background-color: var(--main-background);
+    height: 100vh;
+}
+
+/* ?RESPONSIVE */
+
+/* *TABLET */
+/* @media (width <= 1024px) {
+    
+} */
+
+/* *NETBOOK */
+/* *Utilizar esta @media, usar la extención de google para la netbook */
+/* *NETBOOK */
+@media screen and (min-width: 1024px) {
+
+    
+}
+
+/**PC ESCRITORIO */
+@media screen and (min-width: 1367px) {
+   
+}
+
+/* Forzar orientación vertical en dispositivos móviles */
+@media screen and (max-width: 1000px) and (orientation: landscape) {
+    body {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}
