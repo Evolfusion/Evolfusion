@@ -76,7 +76,7 @@ main{
     margin: var(--container-margin);
 }
 /* Agregar efecto neon */
-.home__link{
+.home__link {
     background-color: var(--btn-background);
     color: var(--btn-color);
     text-decoration: none;
@@ -84,6 +84,11 @@ main{
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     margin: var(--container-margin);
+    transition: 0.5s ease all; /* Efecto de transición */ 
+}
+
+.home__link:hover {
+    text-shadow: 0 0 4px var(--btn-color), 0 0 8px var(--btn-color), 0 0 12px var(--btn-color), 0 0 16px var(--btn-color), 0 0 20px var(--btn-color);
 }
 .home__img-container {
     width: 100%;
@@ -109,6 +114,27 @@ main{
     background-color: #ED1E79; /* Color deseado */
     opacity: 0.2; /* Ajusta la opacidad del color */
     pointer-events: none; /* Permite la interacción con la imagen */
+}
+
+.home__icons{
+    background-color: #212529;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.home__icon, .home__icon--big {
+    background-color: #483477;
+    padding: 1rem; 
+    width: 50%;
+}
+.home__icon--big {
+    background-color: #920F49;
+}
+
+.home__icon-img {
+    width: 50px;
+    display: block;
+    margin: auto;
 }
     /* ?RESPONSIVE */
 
