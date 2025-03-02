@@ -13,7 +13,7 @@
     --btn-background: #6E39E9;
     --main-margin: 1rem 1rem;
     /* --netbook-margin: 0 2.25rem; */
-    --container-margin: 1rem 0;
+    --container-margin: 1rem 0rem;
     /* --netbook-container: 1.25rem 0; */
     --list-margin: 0.8rem 0;
     --title-typography: "Be Vietnam Pro", sans-serif; /* Agregar grosor bold  titulo*/
@@ -110,6 +110,197 @@ main{
     opacity: 0.2; /* Ajusta la opacidad del color */
     pointer-events: none; /* Permite la interacción con la imagen */
 }
+/*SECCION CONVERSEMOS*/
+.conversation{
+    background-image: url(../img/fondo-contacto.jpg);
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.conversation__container{
+    margin: var(--main-margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: var(--title-typography);
+}
+.conversation__title{
+    color: var(--title-color);
+    font-size: var(--title-size);
+}
+.conversation__text,.link__information{
+    color: var(--description-color);
+    font-size: var(--description-size);
+    font-family: var(--description-typography);
+}
+/*SECCION LINKS*/
+.links{
+    margin: var(--main-margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.links__container{
+    margin: var(--container-margin);
+    background-color: #412E46;
+    font-family: var(--title-typography);
+    border-radius: 1.25rem;
+    width: 60vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.link__title{
+    color: var(--title-color);
+    font-size: var(--description-size);
+    font-family: var(--title-typography);
+}
+/*SECCION FORM*/
+.form{
+    margin: var(--main-margin);
+}
+.form__container {
+    margin: var(--container-margin);
+    background-color: #412E46;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 4% 5% 4%;
+    border-radius: 6px;
+}
+.form__grupo {
+    margin: var(--container-margin);
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    color: var(--description-color);
+    font-size: var(--description-size);
+}
+.form__grupo input{
+    width: 100%;
+    padding: 1%;
+    border-radius: 6px;
+    font-family: var(--subtitle-typography);
+}
+.form__message {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    font-family: var(--subtitle-typography);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+.form__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form__btn button {
+    width: 100%;
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    padding: 2%;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: var(--btn-size);
+    font-family: var(--description-typography);
+    cursor: pointer;
+}
+/*FOOTER*/
+.footer{
+    background-color: #212428;
+}
+.footer__start{
+    margin: var(--main-margin);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+}
+.footer__logo{
+    width: 15%;
+    margin: var(--container-margin);
+}
+.footer__information{
+    margin: var(--container-margin);
+}
+.footer__text{
+    color: var(--description-color);
+    font-size: var(--btn-size);
+    font-family: var(--description-typography);
+}
+.footer__socialMedia{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: .625rem;
+}
+.footer__icon1,.footer__icon2, .footer__icon3{
+    width: 1.25rem;
+}
+.footer__end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.footer__title{
+    color: var(--title-color);
+    font-size: var(--description-size);
+    font-family: var(--title-typography);
+}
+.footer__text{
+    margin: var(--container-margin);
+    color: var(--description-color);
+    font-size: var(--description-size);
+    font-family: var(--description-typography);
+}
+.footer__author{
+    text-align: center;
+    margin-top: 10%;
+    color: var(--description-color);
+    font-size: var(--description-size);
+    font-family: var(--description-typography);
+}
+.fa-whatsapp {
+    font-size: 3rem;
+    color: #ffffff;
+    background-color: #49E670;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+/* .fa-circle-arrow-up {
+    font-size: 3rem;
+    color: #ffffff;
+    background-color: #181818;
+    border: 2px solid #03A9F4;
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+} */
     /* ?RESPONSIVE */
 
 /* *TABLET */
