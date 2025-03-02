@@ -10,24 +10,28 @@
   /*   --fa-check-color: #49E670;
     --business-color: #ffffff; */
     --btn-color:#ffffff;
+    --btn-background: #6E39E9;
     --main-margin: 1rem 1rem;
-    --netbook-margin: 0 2.25rem;
+    /* --netbook-margin: 0 2.25rem; */
     --container-margin: 1rem 0;
-    --netbook-container: 1.25rem 0;
+    /* --netbook-container: 1.25rem 0; */
     --list-margin: 0.8rem 0;
-    --title-typography: "Be Vietnam Pro", sans-serif; /* Agregar grosor bold */
-    --subtitle-typography: "Be Vietnam Pro", sans-serif; /* Agregar grosor regular/normal */
-    --description-typography: "Roboto", sans-serif;/* Agregar grosor regular/normal */
-    --title-size: 1rem;
-    --netbook-title: 1.5625rem;
+    --title-typography: "Be Vietnam Pro", sans-serif; /* Agregar grosor bold  titulo*/
+    --subtitle-typography: "Be Vietnam Pro", sans-serif; /* Agregar grosor regular/normal subtitulo */
+    --description-typography: "Roboto", sans-serif;/* Agregar grosor regular/normal descripción */
+    --title-size: 1.50rem;
+   /*  --netbook-title: 1.5625rem; */
     --subtitle-size: .875rem;
-    --netbook-subtitle: 1.25rem;
-    --description-size: .75rem;
-    --netbook-description: 1rem;
-    --business-size: 1.25rem;
-    --home-size: 1.25rem;
-    --btn-size: .8125rem;
+   /*  --netbook-subtitle: 1.25rem; */
+    --description-size: 1rem;
+   /*  --netbook-description: 1rem; */
+    /* --business-size: 1.25rem; */
+    --home-size: 2rem;
+    --btn-size: 1rem;
 }
+/* Medidas rem, px, % , vh, vw  */
+
+
 * {
     padding: 0;
     margin: 0;
@@ -49,14 +53,67 @@ footer {
 
 main{
     background-color: var(--main-background);
-    height: 100vh;
+}
+.home{
+    margin: var(--main-margin);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home__title{
+    color: var(--title-color);
+    font-family: var(--title-typography);
+    font-size: var(--home-size);
+    font-weight: bold;
+    text-align: center;
+}
+.home__description{
+    color: var(--description-color);
+    font-family: var(--description-typography);
+    font-size: var(--description-size);
+    text-align: center;
+    margin: var(--container-margin);
+}
+/* Agregar efecto neon */
+.home__link{
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    text-decoration: none;
+    font-size: var(--btn-size);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    margin: var(--container-margin);
+}
+.home__img-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden; /* Oculta la parte sobrante */
+    filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.618)); /* Sombra flotante */
 }
 
-/* ?RESPONSIVE */
+.home__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: (0.5);
+}
+.home__img-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ED1E79; /* Color deseado */
+    opacity: 0.2; /* Ajusta la opacidad del color */
+    pointer-events: none; /* Permite la interacción con la imagen */
+}
+    /* ?RESPONSIVE */
 
 /* *TABLET */
 /* @media (width <= 1024px) {
-    
 } */
 
 /* *NETBOOK */
