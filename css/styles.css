@@ -132,7 +132,7 @@ main{
 }
 
 .home__icon-img {
-    width: 50px;
+    width: 30%; /* !Controlar */
     display: block;
     margin: auto;
 }
