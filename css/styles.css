@@ -91,6 +91,7 @@ a{
     border-radius: 0.25rem;
     margin: var(--container-margin);
     transition: 0.5s ease all; /* Efecto de transición */ 
+    font-family: var(--subtitle-typography);
 }
 
 .home__link:hover {
@@ -152,9 +153,8 @@ a{
 /* ?ABOUT */
 .about{
     background-color: #212529;
-}
-.about_container{
-    padding: var(--container-padding);
+    padding: var(--main-margin);
+    
 }
 .about__title{
     color: var(--subtitle-color);
@@ -172,10 +172,6 @@ a{
     font-family: var(--description-typography);
     /* !Incorporar variable */
     font-size: 0.9rem;
-    margin: var(--container-margin);
-}
-.about__img-container{
-    margin: var(--main-margin);
 }
 .about__img-container--left{
     background-color: #6E39E9;
