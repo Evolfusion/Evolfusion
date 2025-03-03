@@ -28,6 +28,8 @@
     /* --business-size: 1.25rem; */
     --home-size: 2rem;
     --btn-size: 1rem;
+
+    --little-size:.75rem
 }
 /* Medidas rem, px, % , vh, vw  */
 
@@ -53,6 +55,10 @@ footer {
 
 main{
     background-color: var(--main-background);
+}
+a{
+    text-decoration: none;
+    color: var(--description-color);
 }
 .home{
     margin: var(--main-margin);
@@ -144,8 +150,20 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+.conversation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.686); /* Ajustá el último valor para cambiar la opacidad */
 }
 .conversation__container{
+    position: relative; 
+    z-index: 1;
     margin: var(--main-margin);
     display: flex;
     align-items: center;
@@ -157,15 +175,15 @@ main{
 .conversation__title{
     color: var(--title-color);
     font-size: var(--title-size);
+    margin: var(--container-margin);
 }
-.conversation__text,.link__information{
+.conversation__text{
     color: var(--description-color);
     font-size: var(--description-size);
     font-family: var(--description-typography);
 }
 /*SECCION LINKS*/
 .links{
-    margin: var(--main-margin);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,8 +194,8 @@ main{
     background-color: #412E46;
     font-family: var(--title-typography);
     border-radius: 1.25rem;
-    width: 60vw;
-    height: 20vh;
+    width: 45vw;
+    height: 40vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,12 +206,23 @@ main{
     font-size: var(--description-size);
     font-family: var(--title-typography);
 }
+.link__information{
+    color: var(--description-color);
+    font-size: var(--little-size);
+    font-family: var(--description-typography);
+}
+.fa-location-dot, .fa-instagram, .fa-envelope, .links__whatsapp{
+    color: red;
+    font-size: 2rem;
+    margin: var(--container-margin);
+}
 /*SECCION FORM*/
 .form{
     margin: var(--main-margin);
 }
+/*? TIENE MARING: MAIN XQ ASI QUEDA MAS SEPARADO, PERO SE QUE TENDIRA QUE IR CONTAINER*/
 .form__container {
-    margin: var(--container-margin);
+    margin: var(--main-margin);
     background-color: #412E46;
     display: flex;
     flex-direction: column;
@@ -247,7 +276,7 @@ main{
 .footer__start{
     margin: var(--main-margin);
     display: flex;
-    align-items: flex-start;
+    align-items: start;
     justify-content: center;
     gap: 1rem;
 }
@@ -274,7 +303,7 @@ main{
 }
 .footer__end{
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 1rem;
 }
@@ -286,17 +315,17 @@ main{
 .footer__text{
     margin: var(--container-margin);
     color: var(--description-color);
-    font-size: var(--description-size);
+    font-size: var(--little-size);
     font-family: var(--description-typography);
 }
 .footer__author{
     text-align: center;
     margin-top: 10%;
     color: var(--description-color);
-    font-size: var(--description-size);
+    font-size: var(--little-size);
     font-family: var(--description-typography);
 }
-.fa-whatsapp {
+.footer__whatsapp {
     font-size: 3rem;
     color: #ffffff;
     background-color: #49E670;
