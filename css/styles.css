@@ -1,8 +1,8 @@
 :root {
     --header-background:#ffffff80;
     --main-background: linear-gradient(45deg, rgba(110, 57, 233, 0.8), rgba(237, 30, 121, 0.8));
-    /*     --home-color: #ffffff;
-    --home-hover: #03A9F4; */
+    /*     --home-color: #ffffff; */
+    --home-hover: #6E39E9;
     --title-color: #ffffff;
     --subtitle-color: #ED1E79;
     --description-color: #DFDDE1;
@@ -32,8 +32,6 @@
 
     --little-size:.75rem
 }
-/* Medidas rem, px, % , vh, vw  */
-
 
 * {
     padding: 0;
@@ -50,16 +48,80 @@ body {
     height: auto;
 }
 
-footer {
-    background-color: var(--header-background);
-}
-
 main{
     background-color: var(--main-background);
 }
 a{
     text-decoration: none;
     color: var(--description-color);
+}
+
+header {
+    background-color: var(--header-background);
+    color: white;
+    position: relative;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.nav__list {
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #111111;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav__li {
+    margin: 15px 0;
+}
+
+.nav__a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    font-family: var(--title-typography);
+    font-weight: bold;
+}
+
+.nav__a:hover {
+    color: var(--home-hover);
+}
+
+.nav__bars {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav__bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+.nav__list.show {
+    display: flex;
+    /* ARREGLAR */
+    background-color: #ED1E79;
+    z-index: 100;
+}
+
+.logo > .logo__img {
+    width: 70px;
+    object-fit: cover;
 }
 .home{
     margin: var(--main-margin);
@@ -209,7 +271,7 @@ a{
         0 0 15px #ED1E79;
 }
 
-/*SECCION CONVERSEMOS*/
+/*?SECCION CONVERSEMOS*/
 .conversation{
     background-image: url(../img/fondo-contacto.jpg);
     background-size: cover;
@@ -278,10 +340,28 @@ a{
     font-size: var(--little-size);
     font-family: var(--description-typography);
 }
-.fa-location-dot, .fa-instagram, .fa-envelope, .links__whatsapp{
-    color: red;
-    font-size: 2rem;
-    margin: var(--container-margin);
+
+.fa-location-dot, .fa-instagram, .fa-envelope, .links__whatsapp {
+    font-size: 2rem; /* Tamaño de fuente de los íconos */
+    margin: var(--container-margin); /* Margen alrededor de los íconos */
+    
+    /* Gradiente de fondo aplicado a los íconos */
+    background: linear-gradient(45deg, rgba(110, 57, 233, 0.8), rgba(237, 30, 121, 0.8));
+    
+    /* Hace que el fondo solo se aplique al texto en navegadores basados en WebKit */
+    -webkit-background-clip: text;
+    
+    /* Propiedad estándar para hacer que el fondo solo se aplique al texto */
+    background-clip: text;
+    
+    /* Hace que el color de relleno del texto sea transparente en navegadores basados en WebKit */
+    -webkit-text-fill-color: transparent;
+    
+    /* Aplica el gradiente como una máscara al contenido del ícono */
+    mask-image: linear-gradient(45deg, rgba(110, 57, 233, 0.8), rgba(237, 30, 121, 0.8));
+    
+    /* Aplica el gradiente como una máscara al contenido del ícono en navegadores basados en WebKit */
+    -webkit-mask-image: linear-gradient(45deg, rgba(110, 57, 233, 0.8), rgba(237, 30, 121, 0.8));
 }
 /*SECCION FORM*/
 .form{
@@ -289,7 +369,6 @@ a{
 }
 /*? TIENE MARING: MAIN XQ ASI QUEDA MAS SEPARADO, PERO SE QUE TENDIRA QUE IR CONTAINER*/
 .form__container {
-    margin: var(--main-margin);
     background-color: #412E46;
     display: flex;
     flex-direction: column;
@@ -433,7 +512,30 @@ a{
 /* *Utilizar esta @media, usar la extención de google para la netbook */
 /* *NETBOOK */
 @media screen and (min-width: 1024px) {
-
+        /* ?HEADER */
+        .nav {
+            justify-content: space-around;
+            margin: var(--netbook-margin);
+        }
+    
+        .nav__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: center;
+            gap: 20px;
+            position: static;
+            background-color: transparent;
+            text-align: left;
+        }
+    
+        .nav__list>.nav__li {
+            margin: 0;
+        }
+    
+        .nav__bar {
+            display: none;
+        }
     
 }
 
