@@ -235,15 +235,24 @@ header {
     /* !Incorporar variable */
     font-size: 0.9rem;
 }
+.about__img-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
 .about__img-container--left{
+    min-width: 100%;
+    transition: transform 0.8s ease-in-out;
     background-color: #6E39E9;
     margin: var(--container-margin);
     padding: 1rem;
     border-radius: 10px;
 }
+
 .about__img{
     width: 50%;
-    height: 100%;
+    height: 65%;
     border-radius: 100%;
     border: #ED1E79 2px solid;
     object-fit: cover;
