@@ -20,3 +20,40 @@ function initMenu() {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselContainer = document.querySelector('.about__img-container');
+    const carouselItems = document.querySelectorAll('.about__img-container--left');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carouselItems.forEach(item => {
+            item.style.transform = `translateX(${offset}%)`;
+        });
+    }
+
+    function showNextItem() {
+        if (currentIndex < carouselItems.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+            carouselItems.forEach(item => {
+                item.classList.add('about__img-container--no-transition');
+                item.style.transform = `translateX(${100}%)`;
+            });
+            setTimeout(() => {
+                carouselItems.forEach(item => {
+                    item.classList.remove('about__img-container--no-transition');
+                    updateCarousel();
+                });
+            }, 50); // Espera un poco antes de quitar la clase
+            return;
+        }
+        updateCarousel();
+    }
+
+    setInterval(showNextItem, 3000); // Cambia de imagen cada 3 segundos
+
+    updateCarousel();
+});
