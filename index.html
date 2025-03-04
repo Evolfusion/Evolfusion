@@ -32,11 +32,26 @@
 
 <body>
     <header>
+        <nav class="nav" id="home">
+            <div class="logo">
+                <img src="img/logo-sin-fondo.png" alt="Logo de Evolfusion" class="logo__img">
+            </div>
+            <ul class="nav__list" id="nav__list">
+                <li class="nav__li"><a class="nav__a" href="#home">Inicio</a></li>
+                <li class="nav__li"><a class="nav__a" href="#we">Sobre nosotros</a></li>
+                <li class="nav__li"><a class="nav__a" href="#galery">#</a></li>
+                <li class="nav__li"><a class="nav__a" href="#contact">Contacto</a></li>
+            </ul>
+            <div class="nav__bars" id="nav__bars">
+                <span class="nav__bar"></span>
+                <span class="nav__bar"></span>
+                <span class="nav__bar"></span>
+            </div>
+        </nav>
     </header>
-
     <main>
         <section>
-            <article class="home">
+            <article class="home" id="home">
                 <h1 class="home__title">Creamos tu sitio web</h1>
                 <p class="home__description">Nada de WordPress, nada de plantillas genéricas. Diseñamos páginas y
                     aplicaciones web 100%
@@ -112,7 +127,7 @@
             </div>
         </section>
         <section>
-            <article class="about">
+            <article class="about" id="we">
                 <div class="about_container">
                     <h2 class="about__title">SOBRE NOSOTROS</h2>
                     <p class="about__description">Somos un equipo de desarrolladores apasionados por crear diseños web modernos y personalizados.
@@ -142,40 +157,44 @@
                 </div>
             </article>
         </section>
-        <section class="conversation">
-            <article class="conversation__container">
-                <h1 class="conversation__title">¡CONVERSEMOS!</h1>
-                <p class="conversation__text">Queremos conocer tus necesidades y ayudarte a alcanzar tus objetivos. Contáctanos para una consulta gratuita y juntos encontraremos la mejor solución para tu proyecto.</p>
-            </article>
-        </section>
-        <section class="links">
-                <div>
-                    <address class="links__container">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <h2 class="link__title">Ubicación</h2>
-                            <a target="_blank" href="https://www.google.com.ar/maps/place/Recoleta,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5848096,-58.4066426,15z/data=!3m1!4b1!4m6!3m5!1s0x95bcca99c609fc2f:0x392ca99351808a75!8m2!3d-34.5873825!4d-58.3972762!16zL20vMDVoMmJr?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" ><p class="link__information">Recoleta, Argentina</p></a>
-                    </address>
-                    <address class="links__container">
-                        <i class="fa-brands fa-whatsapp links__whatsapp"></i>
-                        <h2 class="link__title">WhatsApp</h2>
-                            <a target="_blank" href="" ><p class="link__information">+54 11 2772-8592</p></a>
-                    </address>
-                </div>
-                <div>
-                    <address class="links__container">
-                        <i class="fa-brands fa-instagram"></i>
-                        <h2 class="link__title">Instagram</h2>
-                            <a target="_blank" href="https://www.instagram.com/evolfusion_arg/" ><p class="link__information">evolfusion_arg</p></a>
-                    </address>
-                    <address class="links__container">
-                        <i class="fa-solid fa-envelope"></i>
-                        <h2 class="link__title">Email</h2>
-                            <a target="_blank" href="" ><p class="link__information">evolfusion.ok@gmail.com</p></a>
-                    </address>
-                </div>
+        <section>
+            <div class="conversation">
+                <article class="conversation__container">
+                    <h1 class="conversation__title">¡CONVERSEMOS!</h1>
+                    <p class="conversation__text">Queremos conocer tus necesidades y ayudarte a alcanzar tus objetivos. Contáctanos para una consulta gratuita y juntos encontraremos la mejor solución para tu proyecto.</p>
+                </article>
+            </div>
         </section>
         <section>
-            <article class="form">
+               <div class="links">
+                 <div>
+                     <address class="links__container">
+                         <i class="fa-solid fa-location-dot"></i>
+                         <h2 class="link__title">Ubicación</h2>
+                             <a target="_blank" href="https://www.google.com.ar/maps/place/Recoleta,+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5848096,-58.4066426,15z/data=!3m1!4b1!4m6!3m5!1s0x95bcca99c609fc2f:0x392ca99351808a75!8m2!3d-34.5873825!4d-58.3972762!16zL20vMDVoMmJr?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" ><p class="link__information">Recoleta, Argentina</p></a>
+                     </address>
+                     <address class="links__container">
+                         <i class="fa-brands fa-whatsapp links__whatsapp"></i>
+                         <h2 class="link__title">WhatsApp</h2>
+                             <a target="_blank" href="" ><p class="link__information">+54 11 2772-8592</p></a>
+                     </address>
+                 </div>
+                 <div>
+                     <address class="links__container">
+                         <i class="fa-brands fa-instagram"></i>
+                         <h2 class="link__title">Instagram</h2>
+                             <a target="_blank" href="https://www.instagram.com/evolfusion_arg/" ><p class="link__information">evolfusion_arg</p></a>
+                     </address>
+                     <address class="links__container">
+                         <i class="fa-solid fa-envelope"></i>
+                         <h2 class="link__title">Email</h2>
+                             <a target="_blank" href="" ><p class="link__information">evolfusion.ok@gmail.com</p></a>
+                     </address>
+                 </div>
+               </div>
+        </section>
+        <section>
+            <article class="form" id="contact">
                 <div class="form__container">
                 <form action="#" method="post" autocomplete="off">
                     <div class="form__grupo">
@@ -201,7 +220,6 @@
             </article>
         </section>
     </main>
-
     <footer class="footer">
         <div class="footer__start">
             <img class="footer__logo" src="img/logo-sin-fondo.png" alt="Logo Evolfusion">
