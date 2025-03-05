@@ -202,12 +202,9 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ED1E79;
-    /* Color deseado */
-    opacity: 0.2;
-    /* Ajusta la opacidad del color */
-    pointer-events: none;
-    /* Permite la interacción con la imagen */
+    background-color: #ED1E79; 
+    opacity: 0.2; /*opacidad del color*/
+    pointer-events: none; /* Permite la interacción con la imagen */
 }
 
 .home__icons {
@@ -612,6 +609,282 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 } */
+
+
+
+
+
+
+/*SEGUNDA SECCION*/
+
+/*Introduccion a nuestros servicios*/
+.services__container {
+    background-color: #212925;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; 
+    padding: 20px;
+}
+
+.services__title-servi{
+    color:#ED1E79;
+    font-family: var(--title-typography);
+    font-weight: bold;
+    font-size: var(--title-size);
+    
+}
+.services__subtitle-servi{
+    color: var(--description-color);
+    font-family: var(--subtitle-typography);
+    font-weight: normal;
+    font-size: var(--subtitle-size);
+    
+}
+.services__description-servi{
+    color: var(--description-color);
+    font-family: var(--description-typography);
+    font-weight: normal;
+    font-size: var(--description-size);
+    
+}
+
+.services__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300%;
+    width: 90%;   
+    padding: 15px; 
+    box-sizing: border-box;
+    background-color: #212529;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px auto; 
+}
+.services__title{
+    color:var(--title-color);
+    font-family:var(--description-typography);
+    font-weight:bold;
+    font-size:var(--description-size);
+    margin: 10px;
+    
+}
+.services__description {
+    color: var(--description-color);
+    font-size:var(--subtitle-size);
+    font-family: var(--description-typography);
+    font-weight: normal;
+    padding: 5px 10px; 
+    width: 100%;  
+    text-align: center; 
+}
+
+.services__icon {
+    display: flex;
+    justify-content: center;  
+    margin-bottom: 10px;     
+ }
+  
+  .services__image {
+    width: 70px;             
+    
+ }
+
+
+
+
+
+
+
+ /*TERCERA SECCION*/
+
+ /*Introduccion a los detalles de los servicios*/
+ .info {
+    background-color: #212529;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+.info__content{
+    display: flex;
+    flex-direction: column;
+}
+
+.info__title{
+    color:#ED1E79;
+    font-family: var(--title-typography);
+    font-weight: bold;
+    font-size: var(--title-size);
+
+}
+.info__subtitle{
+    color: var(--description-color);
+    font-family: var(--subtitle-typography);
+    font-weight: normal;
+    margin-top: 10px;
+    font-size: var(--subtitle-size);
+
+}
+.info__text{
+    color: var(--description-color);
+    font-family: var(--description-typography);
+    font-weight: normal;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-size: var(--description-size);
+    
+
+}
+
+.info__quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    width: 100%; 
+    height: 100%; 
+    padding: 20px; 
+    margin-top: 20px;
+}
+.info__quote-title{
+    color:#ED1E79;
+    font-family: var(--title-typography);
+    font-weight: bold;
+    font-size: var(--title-size);
+
+}
+.info__quote-subtitle{
+    color: var(--description-color);
+    font-family: var(--subtitle-typography);
+    font-weight: normal;
+    margin-top: 10px;
+    font-size: var(--subtitle-size);
+
+}
+
+
+/*Detalles de los servicios*/
+.info__item {
+    background-color: #6E39E9;
+    padding: 10px;
+    margin: 10px 0; 
+    width: 100%; 
+    border-radius: 10px; 
+}
+
+.info__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+  }
+.info__list-item{
+    display: flex;
+    align-items: center;  /* Alinea verticalmente el icono y el texto */
+    margin-bottom: 10px;
+    color: var(--description-color);
+    font-size:var(--description-size);
+    font-family: var(--description-typography);
+}
+.info__container-title{
+    display: flex;
+    justify-content: center;
+    
+}
+.info__item-title{
+    color: var(--title-color);
+    font-size: var(--subtitle-size);
+    font-family: var(--subtitle-typography);
+    margin-top: 10px;
+       
+}
+.info__list-item-{
+    text-decoration: line-through;
+    color: var(--description-color);
+    font-size: var(--description-size);
+}
+.info__list-item .fa-check {
+    color: #00c896; 
+    font-size: 10px;
+    margin-right: 10px;
+    
+}
+.fa-xmark{
+    color:red;
+}
+
+
+.info__container-button {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    margin-top: 20px; 
+}
+.info__button-item{
+    color:white;
+    background-color:#6E39E9;
+    width: 50%;
+    height: 25px;
+    border: 1px solid #ED1E79;
+    font-family: var(--description-typography);
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+
+/*intro a los planes personalizados*/
+.info__plan {
+    display: flex;
+    flex-direction: column;
+}
+.info__title{
+    color:#ED1E79;
+    font-family: var(--title-typography);
+    font-size: var(--title-size);
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+.info__subtitle{
+    color: var(--description-color);
+    font-family: var(--subtitle-typography);
+    font-size: var(--subtitle-size);
+    font-weight: normal;
+    margin-top: 10px;
+}
+.info__text{
+    color: var(--description-color);
+    font-family: var(--description-typography);
+    font-weight: normal;
+    font-size: var(--description-size);
+    margin-top: 10px;
+
+}
+.info__button{
+    color: #ED1E79;
+    background-color:#212529 ;
+    width: 50%;
+    height: 25px;
+    border: 1px solid #ED1E79;
+    border-radius: 10px;
+    margin-top: 15px;
+    
+}
+
+
+
+
 /* ?RESPONSIVE */
 
 /* *TABLET */
@@ -944,4 +1217,7 @@ header {
         top: 100%;
         left: 0;
     }
+}
+.img{
+    width: 30px;
 }
