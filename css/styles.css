@@ -477,6 +477,8 @@ header {
     padding: 1%;
     border-radius: 6px;
     font-family: var(--subtitle-typography);
+    border: none;
+    outline: none;
 }
 
 .form__message {
@@ -487,6 +489,8 @@ header {
     padding: 10px;
     box-sizing: border-box;
     border-radius: 6px;
+    border: none;
+    outline: none;
 }
 
 .form__btn {
