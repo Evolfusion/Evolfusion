@@ -14,6 +14,7 @@
     --main-margin: 1rem 1rem;
     --netbook-margin: 0 2.25rem;
     /* !Viene a ser como  --main-margin: 1rem 1rem; */
+    --netbook-margin: 0 2.25rem;
     --container-margin: 1rem 0rem;
     --netbook-container: 1.25rem 0;
     --container-padding: 1rem 1rem;
@@ -25,9 +26,12 @@
     --description-typography: "Roboto", sans-serif;
     /* Agregar grosor regular/normal descripción */
     --title-size: 1.50rem;
+    --desktop-title: 3rem;
     --netbook-title: 2rem;
+    --desktop-subtitle: 1rem;
     --subtitle-size: 1.25rem;
     --netbook-subtitle: 1.5rem;
+    --desktop-description: 1.3rem;
     --description-size: 1rem;
     --netbook-description: 1.2rem;
     /* --business-size: 1.25rem; */
@@ -382,19 +386,21 @@ header {
 
 /*SECCION LINKS*/
 .links {
+    margin: var(--main-margin);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1rem;
 }
-
+.links__container1, .links__container2{
+    width: 100%;
+}
 .links__container {
     margin: var(--container-margin);
     background-color: #412E46;
     font-family: var(--title-typography);
     border-radius: 1.25rem;
-    width: 45vw;
-    height: 40vw;
+    width: 100% ; 
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -666,7 +672,7 @@ header {
     }
     .about__img-container--left {
         width: 100%;
-        height: 250px;
+        height: 18.75rem;
         background-color: #6E39E9;
         margin: var(--netbook-container);
     }
@@ -750,13 +756,10 @@ header {
 
     .home__subtitle {
         font-size: var(--netbook-description);
-        font-size: 1rem;
     }
-
     .home__icon--support {
         background-color: #920F49;
     }
-
     .home__icon--dollars {
         background-color: #483477;
     }
@@ -806,14 +809,122 @@ header {
     .about__name {
         margin: 0;
     }
+    .conversation__container{
+        margin: var(--netbook-margin);
+    }
+    .conversation__title{
+        font-size: var(--netbook-title);
+    }
+    .conversation__text, .link__information, .footer__text, .footer__author{
+        font-size: var(--netbook-description);
+    }
+    .link__form{
+        display: flex;
+        align-items: start;
+        justify-content: space-around;
+        margin: var(--main-margin);
+    }
+    .links {
+        width: 50%;
+    }
+    .link__title, .footer__title{
+        font-size: var(--netbook-subtitle);
+    }
+    .form{
+        display: flex;
+        justify-content: end;
+        width: 40%;
+    }
+    .form__container {
+        width: 100%;
+    }
+    .footer{
+        padding-top: 1.5rem;
+    }
+    .form__message, .form__grupo, .form__btn{
+        font-size: var(--netbook-description);
+    }
+    .footer__data{
+        display: flex;
+        align-items: start;
+        justify-content: space-evenly;
+        margin: var(--main-margin);
+    }
+    .footer__start{
+        margin: var(--netbook-margin);
+        justify-content: space-around;
+        align-items: start;
+        width: 40%;
+    }
+    .footer__logo{
+        width: 15%;
+    }
+    .footer__icon1,.footer__icon2, .footer__icon3{
+        width: 1.375rem;
+    }
+    .footer__end{
+        width: 50%;
+        margin: var(--main-margin);
+        justify-content: space-around;
+        align-items: start;
+    }
+    .footer__author{
+        margin-top: 5%;
+        padding-bottom: 1%;
+    }
 }
 
 /**PC ESCRITORIO */
 @media screen and (min-width: 1367px) {
+    .home__title {
+        font-variant: var(--desktop-title);
+    }
+
+    .home__description {
+        font-size: var(--desktop-description);
+        max-width: 80%;
+    }
+
+    .home__img-container {
+        width: 50%;
+        height: auto;
+    }
+    .home__link{
+        font-size:var(--netbook-description);
+    }
+    .home__icons {
+        padding: 0 2rem;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .home__icon-img {
+        width: 20%;
+        /* !Controlar */
+    }
+
+    .home__subtitle {
+        font-size: var(--netbook-description);
+        font-size: var(--desktop-subtitle)
+    }
+
+    .home__icon--support {
+        background-color: #920F49;
+    }
+
+    .home__icon--dollars {
+        background-color: #483477;
+    }
     .about__img-container--left {
         height: 300px;
     }
-
+    
+    .about__description, .about__description--last,.conversation__text{
+        font-size: var(--desktop-description);
+    }
+    .conversation__title, .about__title{
+        font-size: var(--desktop-title);
+    }
 }
 
 /* Forzar orientación vertical en dispositivos móviles */
