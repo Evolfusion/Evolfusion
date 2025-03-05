@@ -18,8 +18,6 @@
     --container-margin: 1rem 0rem;
     --netbook-container: 1.25rem 0;
     --container-padding: 1rem 1rem;
-    --netbook-container: 1.25rem 0;
-    --container-padding:1rem 1rem;
     --list-margin: 0.8rem 0;
     --title-typography: "Be Vietnam Pro", sans-serif;
     /* Agregar grosor bold  titulo*/
@@ -28,14 +26,14 @@
     --description-typography: "Roboto", sans-serif;
     /* Agregar grosor regular/normal descripción */
     --title-size: 1.50rem;
+    --desktop-title: 3rem;
     --netbook-title: 2rem;
-    --netbook-title: 1.5625rem;
+    --desktop-subtitle: 1rem;
     --subtitle-size: 1.25rem;
     --netbook-subtitle: 1.5rem;
-    --netbook-subtitle: 1.25rem;
+    --desktop-description: 1.3rem;
     --description-size: 1rem;
     --netbook-description: 1.2rem;
-    --netbook-description: 1rem;
     /* --business-size: 1.25rem; */
     --home-size: 2rem;
     --btn-size: 1rem;
@@ -759,13 +757,10 @@ header {
 
     .home__subtitle {
         font-size: var(--netbook-description);
-        font-size: 1rem;
     }
-
     .home__icon--support {
         background-color: #920F49;
     }
-
     .home__icon--dollars {
         background-color: #483477;
     }
@@ -883,11 +878,11 @@ header {
 /**PC ESCRITORIO */
 @media screen and (min-width: 1367px) {
     .home__title {
-        font-size: 3rem;
+        font-variant: var(--desktop-title);
     }
 
     .home__description {
-        font-size: 1.2rem;
+        font-size: var(--desktop-description);
         max-width: 80%;
     }
 
@@ -896,7 +891,7 @@ header {
         height: auto;
     }
     .home__link{
-        font-size: 1.5rem;
+        font-size:var(--netbook-description);
     }
     .home__icons {
         padding: 0 2rem;
@@ -911,7 +906,7 @@ header {
 
     .home__subtitle {
         font-size: var(--netbook-description);
-        font-size: 1rem;
+        font-size: var(--desktop-subtitle)
     }
 
     .home__icon--support {
@@ -925,14 +920,11 @@ header {
         height: 300px;
     }
     
-    .about__description, .about__description--last{
-        font-size: 1.3rem;
+    .about__description, .about__description--last,.conversation__text{
+        font-size: var(--desktop-description);
     }
     .conversation__title, .about__title{
-        font-size: 2rem;
-    }
-    .conversation__text{
-        font-size: 1.3rem;
+        font-size: var(--desktop-title);
     }
 }
 
