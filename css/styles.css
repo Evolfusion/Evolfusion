@@ -206,11 +206,6 @@ header {
     /*opacidad del color*/
     pointer-events: none;
     /* Permite la interacción con la imagen */
-    background-color: #ED1E79;
-    opacity: 0.2;
-    /*opacidad del color*/
-    pointer-events: none;
-    /* Permite la interacción con la imagen */
 }
 
 .home__icons {
@@ -353,12 +348,8 @@ header {
     text-align: center;
     gap: 15px;
     padding: var(--main-margin);
-    gap: 15px;
-    padding: var(--main-margin);
 }
 
-.services__title-servi {
-    color: #ED1E79;
 .services__title-servi {
     color: #ED1E79;
     font-family: var(--title-typography);
@@ -367,14 +358,10 @@ header {
 }
 
 .services__subtitle-servi {
-
-.services__subtitle-servi {
     color: var(--description-color);
     font-family: var(--subtitle-typography);
     font-size: var(--subtitle-size);
 }
-
-.services__description-servi {
 
 .services__description-servi {
     color: var(--description-color);
@@ -385,13 +372,11 @@ header {
 
 .services__article {
     margin: var(--main-margin);
-    margin: var(--main-margin);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: .9375rem;
     padding: .9375rem;
     box-sizing: border-box;
     background-color: #212529;
@@ -406,19 +391,8 @@ header {
     margin: .625rem;
 }
 
-}
-
-.services__title {
-    color: var(--title-color);
-    font-family: var(--description-typography);
-    font-weight: bold;
-    font-size: var(--subtitle-size);
-    margin: .625rem;
-}
-
 .services__description {
     color: var(--description-color);
-    font-size: var(--description-size);
     font-size: var(--description-size);
     font-family: var(--description-typography);
     font-weight: normal;
@@ -452,7 +426,6 @@ header {
     color: var(--description-color);
     font-family: var(--description-typography);
     margin-top: 1rem;
-    margin-top: 1rem;
     font-size: var(--description-size);
 }
 .cards{
@@ -474,7 +447,6 @@ header {
     font-family: var(--subtitle-typography);
     font-weight: normal;
     margin: var(--container-margin);
-    margin: var(--container-margin);
     font-size: var(--subtitle-size);
     text-align: center;
 } 
@@ -495,7 +467,6 @@ header {
     margin: 1rem 0 0 0;
     color: var(--description-color);
     font-size: var(--description-size);
-    font-size: var(--description-size);
     font-family: var(--description-typography);
 }
 .cards__item-title {
@@ -510,11 +481,7 @@ header {
     font-size: .625rem;
     margin-right: .625rem;
     font-size: 1.2rem;
-    font-size: 1.2rem;
 }
-
-.fa-xmark {
-    color: red;
 
 .fa-xmark {
     color: red;
@@ -635,19 +602,14 @@ header {
 
 .links__container1,
 .links__container2 {
-
-.links__container1,
-.links__container2 {
     width: 100%;
 }
-
 
 .links__container {
     margin: var(--container-margin);
     background-color: #412E46;
     font-family: var(--title-typography);
     border-radius: 1.25rem;
-    width: 100%;
     width: 100%;
     padding: 1rem;
     display: flex;
@@ -856,7 +818,6 @@ header {
 
     /* ?HOME */
 
-
     .home__icons {
         padding: 0 2rem;
         display: flex;
@@ -900,7 +861,6 @@ header {
     }
 
 
-
     .about__description--last {
         /* !Incorporar variable */
         font-size: 1rem;
@@ -915,7 +875,6 @@ header {
         width: 100%;
     }
 
-
     .about__img-container--left {
         width: 100%;
         height: 18.75rem;
@@ -923,11 +882,9 @@ header {
         margin: var(--netbook-container);
     }
 
-
     .about__img {
         width: 30%;
     }
-
 
     .about__name {
         margin: 0;
@@ -939,9 +896,6 @@ header {
 /* *Utilizar esta @media, usar la extención de google para la netbook */
 /* *NETBOOK */
 @media screen and (min-width: 1024px) {
-
-    /* ?HEADER */
-    .nav {
 
     /* ?HEADER */
     .nav {
@@ -1012,16 +966,13 @@ header {
         font-size: var(--netbook-description);
     }
 
-
     .home__icon--support {
         background-color: #920F49;
     }
 
-
     .home__icon--dollars {
         background-color: #483477;
     }
-
 
     /* ?ABOUT */
     .about {
@@ -1057,7 +1008,6 @@ header {
         width: 100%;
     }
 
-
     .about__img-container--left {
         width: 100%;
         height: 250px;
@@ -1065,11 +1015,9 @@ header {
         margin: var(--netbook-container);
     }
 
-
     .about__img {
         width: 30%;
     }
-
 
     .about__name {
         margin: 0;
@@ -1202,7 +1150,6 @@ header {
         margin: var(--main-margin);
     }
 
-
     .links {
         width: 50%;
     }
@@ -1220,12 +1167,9 @@ header {
         width: 40%;
     }
 
-
     .form__container {
         width: 100%;
     }
-
-   
 
     .footer {
         padding-top: 1.5rem;
@@ -1239,15 +1183,11 @@ header {
     }
 
     .footer__start {
-
-    .footer__start {
         margin: var(--netbook-margin);
         justify-content: space-around;
         align-items: start;
         width: 40%;
     }
-
-    .footer__logo {
 
     .footer__logo {
         width: 15%;
@@ -1256,14 +1196,8 @@ header {
     .footer__icon1,
     .footer__icon2,
     .footer__icon3 {
-
-    .footer__icon1,
-    .footer__icon2,
-    .footer__icon3 {
         width: 1.375rem;
     }
-
-    .footer__end {
 
     .footer__end {
         width: 50%;
@@ -1271,8 +1205,6 @@ header {
         justify-content: space-around;
         align-items: start;
     }
-
-    .footer__author {
 
     .footer__author {
         margin-top: 5%;
@@ -1298,11 +1230,7 @@ header {
 
     .home__link {
         font-size: var(--netbook-description);
-
-    .home__link {
-        font-size: var(--netbook-description);
     }
-
 
     .home__icons {
         padding: 0 2rem;
@@ -1328,7 +1256,6 @@ header {
         background-color: #483477;
     }
 
-
     .about__img-container--left {
         height: 300px;
     }
@@ -1336,15 +1263,8 @@ header {
     .about__description,
     .about__description--last,
     .conversation__text {
-
-    .about__description,
-    .about__description--last,
-    .conversation__text {
         font-size: var(--desktop-description);
     }
-
-    .conversation__title,
-    .about__title {
 
     .conversation__title,
     .about__title {
@@ -1364,4 +1284,8 @@ header {
         top: 100%;
         left: 0;
     }
+}
+
+.img {
+    width: 30px;
 }
