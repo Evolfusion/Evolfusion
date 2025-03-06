@@ -11,12 +11,15 @@
     --business-color: #ffffff; */
     --btn-color: #ffffff;
     --btn-background: #6E39E9;
+    --btn-background-hover: #540aff;
+    --btn-background-price-hover:  #c40658;
     --main-margin: 1rem 1rem;
     --netbook-margin: 0 2.25rem;
     /* !Viene a ser como  --main-margin: 1rem 1rem; */
     --netbook-margin: 0 2.25rem;
     --container-margin: 1rem 0rem;
     --netbook-container: 1.25rem 0;
+    --desktop-container: 1.5rem 0;
     --container-padding: 1rem 1rem;
     --list-margin: 0.8rem 0;
     --title-typography: "Be Vietnam Pro", sans-serif;
@@ -458,8 +461,8 @@ header {
     width: 100%;
 }
 .cards__list {
+    margin: var(--netbook-description);
     list-style: none;
-    margin: 1.5rem 0 0 0;
 } 
 .cards__list-item {
     display: flex;
@@ -482,13 +485,6 @@ header {
     margin-right: .625rem;
     font-size: 1.2rem;
 }
-
-.fa-xmark {
-    color: red;
-    font-size: .625rem;
-    margin-right: .625rem;
-    font-size: 1.2rem;
-}
 .cards_button-item{
     display: block;
     margin: 2rem auto 0 ;
@@ -499,6 +495,9 @@ header {
     border-radius: 15px;
     text-align: center;
     padding: .3125rem .625rem;
+}
+.cards__container-button :hover , .plan__button:hover {
+    background-color: var(--btn-background-price-hover);
 }
 .plan{
     padding: var(--main-margin);
@@ -545,7 +544,6 @@ header {
     text-align: center;
     padding: .3125rem .625rem;
 } 
-
 /*?SECCION CONVERSEMOS*/
 .conversation {
     background-image: url(../img/fondo-contacto.jpg);
@@ -723,6 +721,9 @@ header {
     font-family: var(--description-typography);
     cursor: pointer;
     border: none;
+}
+.form__btn button:hover {
+    background-color: var(--btn-background-hover);
 }
 
 /*FOOTER*/
@@ -1056,6 +1057,7 @@ header {
         margin-top: 1rem;
         font-size: var(--netbook-description);
     }
+    
     .cards{
         padding: var(--netbook-margin);
         padding-top: 4rem;
@@ -1072,18 +1074,21 @@ header {
     } 
     .cards__container{
         display: flex;
-        flex-wrap: wrap;
-        background-color: red;
-        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+    .cards__subcontainer{
+        width: 100%;
+    }
+    .cards__list{
+        height: 220px;
     }
     .cards__item {
-        background-color: #6E39E9;
-        padding: 10px; 
         margin: var(--netbook-container);
-       
+        width: 100%;
     }
     .cards__list-item {
-        margin: 1.5rem 0 0 0;
         font-size: var(--netbook-description);
     }
     .cards__item-title {
@@ -1092,11 +1097,8 @@ header {
     .cards__list-item .fa-check, .plan__list-item .fa-check {
         font-size: 1.5rem;
     }
-    .fa-xmark {
-        font-size: 1.5rem;
-    }
     .plan{
-       padding: 1rem 2rem;
+        padding: 1rem 2rem;
     }
     .plan__title {
         font-size: var(--netbook-title);
@@ -1111,6 +1113,7 @@ header {
     }
     .plan__text {
         font-size: var(--netbook-description);
+        width: 50%;
     }
     .plan__list-item{
         margin: 1.5rem 0 0 0;
@@ -1270,6 +1273,22 @@ header {
     .about__title {
         font-size: var(--desktop-title);
     }
+    .cards{
+        padding-bottom: 1.25rem;
+    }
+    .cards__subcontainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+    .cards__item{
+        width: 60%;
+    }
+    .cards__list{
+        height: 18.75rem;
+    }
+
 }
 
 /* Forzar orientación vertical en dispositivos móviles */
