@@ -1050,8 +1050,11 @@ header {
         margin-bottom: 1rem;
     }
     .services__articles{
-        margin: var(--netbook-margin);
+        width: 100%;
         display: flex;
+    }
+    .services__article{
+        width: 100%;
     }
     .info {
         background-color: #212529;
