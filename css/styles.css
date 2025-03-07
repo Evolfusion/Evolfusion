@@ -388,10 +388,9 @@ header {
 
 .services__title {
     color: var(--title-color);
-    font-family: var(--description-typography);
+    font-family: var(--subtitle-typography);
     font-weight: bold;
     font-size: var(--subtitle-size);
-    margin: .625rem;
 }
 
 .services__description {
@@ -422,7 +421,7 @@ header {
     color: var(--description-color);
     font-family: var(--subtitle-typography);
     font-weight: normal;
-    margin-top: 10px;
+    margin-top: .625rem;
     font-size: var(--subtitle-size);
 }
 .info__text {
@@ -489,15 +488,16 @@ header {
     display: block;
     margin: 2rem auto 0 ;
     color: var(--btn-color);
-    width: 50%;
+    width: 70%;
     border: 1px solid #ED1E79;
     font-family: var(--description-typography);
     border-radius: 15px;
     text-align: center;
     padding: .3125rem .625rem;
 }
-.cards__container-button :hover , .plan__button:hover {
+.cards__container-button :hover , .plan__button:hover, .cards_button--plan:hover{ 
     background-color: var(--btn-background-price-hover);
+    transition: all 2s ease ;
 }
 .plan{
     padding: var(--main-margin);
@@ -514,7 +514,7 @@ header {
     color: var(--description-color);
     font-family: var(--subtitle-typography);
     font-size: var(--subtitle-size);
-    font-weight: normal;
+    margin-top: .625rem;
 }
 .plan__subtitle--last{
     font-size: 1.1rem;
@@ -543,7 +543,18 @@ header {
     border-radius: 15px;
     text-align: center;
     padding: .3125rem .625rem;
-} 
+}
+.cards_button--plan{
+    display: block;
+    margin: 1rem 0 0 0 ;
+    color: var(--btn-color);
+    width: 50%;
+    border: 2px solid #ED1E79;
+    font-family: var(--description-typography);
+    border-radius: 15px;
+    text-align: center;
+    padding: .3125rem .625rem;
+}
 /*?SECCION CONVERSEMOS*/
 .conversation {
     background-image: url(../img/fondo-contacto.jpg);
@@ -724,6 +735,7 @@ header {
 }
 .form__btn button:hover {
     background-color: var(--btn-background-hover);
+    transition: all 0.5s ease;
 }
 
 /*FOOTER*/
@@ -1056,6 +1068,7 @@ header {
     .info__text {
         margin-top: 1rem;
         font-size: var(--netbook-description);
+        width: 50%;
     }
     
     .cards{
@@ -1088,14 +1101,9 @@ header {
         margin: var(--netbook-container);
         width: 100%;
     }
-    .cards__list-item {
-        font-size: var(--netbook-description);
-    }
-    .cards__item-title {
-        font-size: var(--netbook-subtitle);
-    }
-    .cards__list-item .fa-check, .plan__list-item .fa-check {
-        font-size: 1.5rem;
+    .cards_button-item{
+        margin: 0 auto 0  ;
+        max-width: 40%;
     }
     .plan{
         padding: 1rem 2rem;
@@ -1106,6 +1114,7 @@ header {
     }
     .plan__subtitle, .plan__subtitle--last {
         font-size: var(--netbook-subtitle);
+        margin-top: .625rem;
     }
     .plan__subtitle--last{
         font-size: 1.1rem;
@@ -1130,7 +1139,9 @@ header {
         text-align: center;
         padding: .3125rem .625rem;
     } 
-
+    .cards_button--plan{
+        max-width: 20%;
+    }
     .conversation__container {
         margin: var(--netbook-margin);
     }
@@ -1212,6 +1223,7 @@ header {
     .footer__author {
         margin-top: 5%;
         padding-bottom: 1%;
+        font-size: 0.8rem;
     }
 }
 
@@ -1268,7 +1280,6 @@ header {
     .conversation__text {
         font-size: var(--desktop-description);
     }
-
     .conversation__title,
     .about__title {
         font-size: var(--desktop-title);
@@ -1288,7 +1299,13 @@ header {
     .cards__list{
         height: 18.75rem;
     }
-
+    .cards_button-item {
+        margin: 0 auto 0;
+        max-width: 70%;
+    }
+    .cards_button--plan{
+        max-width: 15%;
+    }
 }
 
 /* Forzar orientación vertical en dispositivos móviles */
