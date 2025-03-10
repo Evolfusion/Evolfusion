@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     initCarousel();
+    cursor();
 });
 
 function initMenu() {
@@ -51,4 +52,15 @@ function initCarousel() {
     }
 
     setInterval(moveCarousel, 3000);
+}
+
+function cursor() {
+    const cursor = document.querySelector('.cursor');
+
+    // Captura la posición del mouse
+    document.addEventListener('mousemove', (e) => {
+        // Actualiza la posición del cursor
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
 }
