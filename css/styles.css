@@ -221,7 +221,7 @@ header {
     width: 100%;
     height: 100%;
     background-color: #ED1E79;
-    opacity: 0.2;
+    opacity: 0.1;
     /*opacidad del color*/
     pointer-events: none;
     /* Permite la interacción con la imagen */
@@ -734,6 +734,7 @@ header {
 
 .form__grupo input {
     width: 100%;
+    height: 30px;
     border-radius: 6px;
     font-family: var(--subtitle-typography);
     border: none;
@@ -1332,7 +1333,6 @@ header {
     }
     .form__grupo input {
         width: 100%;
-        height: 4vh;
         border-radius: 6px;
         font-family: var(--subtitle-typography);
         border: none;
