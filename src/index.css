@@ -1228,20 +1228,22 @@ header {
       margin: var(--netbook-container);
       font-size: var(--netbook-subtitle);
   }
-
+  .cards__container-title{
+    height: 10%;
+  }
   .cards__container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.25rem;
+    display: flex;
+    justify-content: center;
   }
 
   .cards__subcontainer {
-      width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
   }
 
   .cards__list {
-      height: 220px;
+      height: 18.75rem;
   }
 
   .cards__item {
@@ -1250,8 +1252,8 @@ header {
   }
 
   .cards_button-item {
-      margin: 0 auto 0;
-      max-width: 40%;
+      /* margin: 0 auto 0; */
+      max-width: 100%;
   }
 
   .plan {
