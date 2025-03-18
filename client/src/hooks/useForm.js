@@ -31,7 +31,7 @@ export default function useForm() {
 
     // Realizar el fetch para enviar los datos
     try {
-      const response = await fetch('http://localhost:5000/api/info', {
+      const response = await fetch('http://localhost:3000/api/info', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

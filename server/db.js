@@ -5,7 +5,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Variables de entorno
-const dbUri = "mongodb+srv://evolfusion_arg:evolfusion_arg2025%@evolfusionarg.av3zz.mongodb.net/?retryWrites=true&w=majority&appName=EvolfusionArg";
+const dbUri = "mongodb+srv://evolfusion_arg:evolfusion_arg2025%25@evolfusionarg.av3zz.mongodb.net/?retryWrites=true&w=majority&appName=EvolfusionArg";
+
 
 
 console.log("Intentando conectar a MongoDB...");
