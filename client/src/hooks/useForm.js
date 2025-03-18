@@ -29,23 +29,42 @@ export default function useForm() {
 
     console.log('Info a enviar:', formData);
 
-    // Realizar el fetch para enviar los datos
     try {
-      const response = await fetch('http://localhost:3000/api/info', {
+      // Primera petición fetch
+      const response1 = await fetch('http://localhost:3000/api/info', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-      const data = await response.json();
-      console.log('Respuesta:', data);
+
+      const data1 = await response1.json();
+      console.log('Respuesta API Info:', data1);
+
+      // Segunda petición fetch
+      const response2 = await fetch('http://localhost:3000/send-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data2 = await response2.json();
+      console.log('Respuesta API Send-Form:', data2);
+      
+      setFormData({
+        name: '',
+        lastname: '',
+        tel: '',
+        email: '',
+        message: '',
+      });
     } catch (error) {
       console.error('Error en la solicitud:', error);
     }
   };
 
   return { formData, handleChange, handleSubmit };
-};
-
-
+}

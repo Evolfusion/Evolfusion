@@ -1,15 +1,14 @@
-/* import { Resend } from 'resend'; */
+import { Resend } from 'resend';
 import express from 'express';
 import dotenv from 'dotenv';
 import './db.js';  // Esto es correcto si 'db.js' está en el mismo directorio que 'index.js'
 import cors from 'cors';
 import Info from './model/messageModel.js';
 
+const resend = new Resend(process.env.RESEND_API_KEY); // Usar la clave API desde el .env
 
 // Configura dotenv para cargar las variables de entorno
 dotenv.config();
-
-/* const resend = new Resend(process.env.RESEND_API_KEY);  */// Usar la clave API desde el .env
 const app = express();
 
 app.use(cors({
@@ -57,14 +56,14 @@ app.post('/api/info', async (req, res) => {
 });
 
 /* ENVÍO MAIL */
-/* app.post("/send-form", async (req, res) => {
+app.post("/send-form", async (req, res) => {
     const { name, lastname, tel, email, message } = req.body;
 
     try {
         const respuesta = await resend.emails.send({
             from: "onboarding@resend.dev", // Email de prueba de Resend
-            to: "mariavictoria.rios@gmail.com",
-            subject: "Solicitar Asesoramiento",
+            to: "evolfusion.arg@gmail.com",
+            subject: "Asesoramiento",
             text: `Nombre: ${name}\nApellido: ${lastname}\nTelefono: ${tel}\nCorreo: ${email}\nMensaje: ${message}`
         });
 
@@ -74,7 +73,7 @@ app.post('/api/info', async (req, res) => {
         console.error("Error al enviar el correo:", error);
         res.status(500).json({ message: "Error al enviar el correo", error: error.message });
     }
-}); */
+});
 
 const port = 3000;
 app.listen(port, () => {

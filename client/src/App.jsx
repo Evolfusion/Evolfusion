@@ -54,7 +54,7 @@ function App() {
                     <FormSection/>
                 </section>
             </main>
-            <FooterSection/>
+            <FooterSection/> 
         </>
     );
 }
