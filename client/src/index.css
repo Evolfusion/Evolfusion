@@ -776,7 +776,7 @@ header {
   justify-content: center;
 }
 
-.form__btn button {
+.form__btn button, .modal__content button{
   width: 100%;
   background-color: var(--btn-background);
   color: var(--btn-color);
@@ -792,6 +792,38 @@ header {
 .form__btn button:hover {
   background-color: var(--btn-background-hover);
   transition: all 2s ease;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modal__content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+}
+.modal__title{
+font-size: var(--title-size);
+font-family: var(--title-typography);
+color: #540aff;
+}
+.modal__description{
+font-size: var(--description-size);
+font-family: var(--description-typography);
+color: #000000;
+margin: var(--container-margin); 
 }
 
 /*FOOTER*/
