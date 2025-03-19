@@ -1,0 +1,26 @@
+{
+  "name": "evolfusion_arg",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build": "echo 'No build step needed for backend'",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evolfusion/Evolfusion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evolfusion/Evolfusion/issues"
+  },
+  "homepage": "https://github.com/Evolfusion/Evolfusion#readme",
+  "description": ""
+}
