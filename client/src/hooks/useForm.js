@@ -31,7 +31,7 @@ export default function useForm() {
 
     try {
       // Primera petición fetch
-      const response1 = await fetch('http://localhost:3000/api/info', {
+      const response1 = await fetch('/api/info', {  // Se usa solo '/api/info'
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ export default function useForm() {
       console.log('Respuesta API Info:', data1);
 
       // Segunda petición fetch
-      const response2 = await fetch('http://localhost:3000/send-form', {
+      const response2 = await fetch('/send-form', {  // Se usa solo '/send-form'
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

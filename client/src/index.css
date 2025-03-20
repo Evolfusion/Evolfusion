@@ -32,7 +32,7 @@ Estilos base: Aquí puedes establecer los estilos básicos para elementos como e
   --container-margin: 1rem 0rem;
   --netbook-container: 1.25rem 0;
   --desktop-container: 1.5rem 0;
-  --container-padding: 1rem 1rem;
+  --container-padding: 1rem 0;
   --list-margin: 0.8rem 0;
   --title-typography: "Be Vietnam Pro", sans-serif;
   /* Agregar grosor bold  titulo*/
@@ -241,9 +241,10 @@ header {
 
 .home__icons {
   background-color: #212529;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .home__icon,
@@ -281,9 +282,9 @@ header {
 
 .about__title {
   color: var(--subtitle-color);
-  font-family: var(--subtitle-typography);
-  font-size: var(--subtitle-size);
-  text-align: center;
+  font-family: var(--title-typography);
+  font-weight: bold;
+  font-size: var(--title-size);
 }
 
 .about__description {
@@ -467,7 +468,7 @@ header {
 }
 
 .cards__quote {
-  padding: var(--container-margin);
+  padding: 0.5rem 0;
 }
 
 .cards__quote-title {
@@ -920,7 +921,7 @@ margin: var(--container-margin);
   /* ?HOME */
 
   .home__icons {
-      padding: 0 2rem;
+      padding: 1rem 2rem;
       display: flex;
       flex-wrap: nowrap;
   }
@@ -1124,7 +1125,7 @@ margin: var(--container-margin);
   }
 
   .home__icons {
-      padding: 0 2rem;
+      padding: 1rem 2rem;
       display: flex;
       flex-wrap: nowrap;
   }
@@ -1157,7 +1158,7 @@ margin: var(--container-margin);
 
   .about__title {
       font-size: var(--netbook-title);
-      text-align: start;
+      
   }
 
   .about__description {
@@ -1246,10 +1247,6 @@ margin: var(--container-margin);
   .cards {
       padding: var(--netbook-margin);
       padding-top: 4rem;
-  }
-
-  .cards__quote {
-      padding: var(--netbook-container);
   }
 
   .cards__quote-title {
@@ -1447,7 +1444,7 @@ margin: var(--container-margin);
   }
 
   .home__icons {
-      padding: 0 2rem;
+      padding: 1rem 2rem;
       display: flex;
       flex-wrap: nowrap;
   }
@@ -1473,7 +1470,9 @@ margin: var(--container-margin);
   .about__img-container--left {
       height: 300px;
   }
-
+  .about__title{
+    font-size: var(--desktop-description);
+  }
   .about__description,
   .about__description--last,
   .conversation__text {
@@ -1483,8 +1482,7 @@ margin: var(--container-margin);
       height: 60vh;
   }
 
-  .conversation__title,
-  .about__title {
+  .conversation__title {
       font-size: var(--desktop-title);
   }
 
