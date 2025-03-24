@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { links } from "../data/data";
 import useForm from "../hooks/useForm";
 
@@ -30,11 +32,13 @@ export default function FormSection() {
     await handleSubmit(e); // Llamamos a la función de envío solo si el formulario es válido
     setIsModalOpen(true); // Mostramos la modal de éxito
   };
-
+   useEffect(() => {
+          AOS.init({ duration: 2000, once: true });
+      }, []);
   return (
     <>
       <div className="links">
-        <div className="links__container1">
+        <div className="links__container1" data-aos="flip-left">
           {links.slice(0, 2).map((link, index) => (
             <address key={index} className="links__container">
               <i className={link.icon}></i>
@@ -45,7 +49,7 @@ export default function FormSection() {
             </address>
           ))}
         </div>
-        <div className="links__container2">
+        <div className="links__container2" data-aos="flip-right">
           {links.slice(2).map((link, index) => (
             <address key={index} className="links__container">
               <i className={link.icon}></i>
@@ -59,7 +63,7 @@ export default function FormSection() {
       </div>
 
       <article className="form" id="contact">
-        <div className="form__container">
+        <div className="form__container" data-aos="fade-up">
           <form onSubmit={handleFormSubmit} autoComplete="off">
             <div className="form__grupo">
               <input

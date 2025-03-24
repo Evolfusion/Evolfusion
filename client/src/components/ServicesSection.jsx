@@ -1,6 +1,12 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { servicesData } from "../data/data"; // Importa los datos
 
 export default function ServicesSection() {
+     useEffect(() => {
+            AOS.init({ duration: 2000, once: true });
+        }, []);
     return (
         <>
             <div className="services__container">
@@ -12,7 +18,7 @@ export default function ServicesSection() {
             </div>
             <div className="services__articles">
                 {servicesData.map((service, index) => (
-                    <article key={index} className="services__article">
+                    <article key={index} className="services__article" data-aos="fade-up">
                         <div className="services__icon">
                             <img className="services__image" src={service.imgSrc} alt={service.imgAlt} />
                         </div>

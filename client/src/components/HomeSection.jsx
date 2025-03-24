@@ -1,23 +1,34 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function HomeSection() {
+    useEffect(() => {
+        AOS.init({ duration: 2000, once: true });
+    }, []);
+
     return (
         <>
             <article className="home">
-                <div className="home__container">
+                <div className="home__container" data-aos="fade-up">
                     <h1 className="home__title">Creamos tu sitio web</h1>
-                    <p className="home__description">Nada de WordPress, nada de plantillas genéricas. Diseñamos páginas y
-                        aplicaciones web 100%
-                        personalizadas para optimizar la interacción con tus clientes y llevar tu negocio al siguiente
-                        nivel.</p>
+                    <p className="home__description">
+                        Nada de WordPress, nada de plantillas genéricas. Diseñamos páginas y aplicaciones web 100%
+                        personalizadas para optimizar la interacción con tus clientes y llevar tu negocio al siguiente nivel.
+                    </p>
                     <a href="#services" aria-label="Ver nuestros servicios de programación y tecnologías digitales"
-                        className="home__link">SERVICIOS</a>
+                        className="home__link">
+                        SERVICIOS
+                    </a>
                 </div>
-                <div className="home__img-container">
+                <div className="home__img-container" data-aos="fade-up">
                     <img src="img/imagen-inicio.png" alt="Servicios de Programación y Tecnologías Digitales" className="home__img" />
                 </div>
             </article>
+
             <div className="home__icons">
-                <div className="home__icon">
-                    <svg className="home__icon-img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="home__icon" data-aos="flip-left">
+                <svg className="home__icon-img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style={{ stopColor: '#6E39E9', stopOpacity: 1 }} />
@@ -30,10 +41,10 @@ export default function HomeSection() {
                         <path d="M9 12L10.8189 13.8189V13.8189C10.9189 13.9189 11.0811 13.9189 11.1811 13.8189V13.8189L15 10"
                             stroke="url(#grad1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <h2 className="home__subtitle">Rapido</h2>
+                    <h2 className="home__subtitle">Rápido</h2>
                 </div>
-                <div className="home__icon--big">
-                    <svg className="home__icon-img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div className="home__icon--big" data-aos="flip-right">
+                <svg className="home__icon-img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style={{ stopColor: '#6E39E9', stopOpacity: 1 }} />
@@ -43,10 +54,10 @@ export default function HomeSection() {
                         <path fill="url(#grad1)"
                             d="M17 12c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6zm.5 8.474v.526h-.5v-.499c-.518-.009-1.053-.132-1.5-.363l.228-.822c.478.186 1.114.383 1.612.27.574-.13.692-.721.057-1.005-.465-.217-1.889-.402-1.889-1.622 0-.681.52-1.292 1.492-1.425v-.534h.5v.509c.362.01.768.073 1.221.21l-.181.824c-.384-.135-.808-.257-1.222-.232-.744.043-.81.688-.29.958.856.402 1.972.7 1.972 1.773.001.858-.672 1.315-1.5 1.432zm1.624-10.179c1.132-.223 2.162-.626 2.876-1.197v.652c0 .499-.386.955-1.007 1.328-.581-.337-1.208-.6-1.869-.783zm-2.124-5.795c2.673 0 5-1.007 5-2.25s-2.327-2.25-5-2.25c-2.672 0-5 1.007-5 2.25s2.328 2.25 5 2.25zm.093-2.009c-.299-.09-1.214-.166-1.214-.675 0-.284.334-.537.958-.593v-.223h.321v.211c.234.005.494.03.784.09l-.116.342c-.221-.051-.467-.099-.708-.099l-.072.001c-.482.02-.521.287-.188.399.547.169 1.267.292 1.267.74 0 .357-.434.548-.967.596v.22h-.321v-.208c-.328-.003-.676-.056-.962-.152l.147-.343c.244.063.552.126.828.126l.208-.014c.369-.053.443-.3.035-.418zm-11.093 13.009c1.445 0 2.775-.301 3.705-.768.311-.69.714-1.329 1.198-1.899-.451-1.043-2.539-1.833-4.903-1.833-2.672 0-5 1.007-5 2.25s2.328 2.25 5 2.25zm.093-2.009c-.299-.09-1.214-.166-1.214-.675 0-.284.335-.537.958-.593v-.223h.321v.211c.234.005.494.03.784.09l-.117.342c-.22-.051-.466-.099-.707-.099l-.072.001c-.482.02-.52.287-.188.399.547.169 1.267.292 1.267.74 0 .357-.434.548-.967.596v.22h-.321v-.208c-.329-.003-.676-.056-.962-.152l.147-.343c.244.063.552.126.828.126l.208-.014c.368-.053.443-.3.035-.418zm4.003 8.531c-.919.59-2.44.978-4.096.978-2.672 0-5-1.007-5-2.25v-.652c1.146.918 3.109 1.402 5 1.402 1.236 0 2.499-.211 3.549-.611.153.394.336.773.547 1.133zm-9.096-3.772v-.651c1.146.917 3.109 1.401 5 1.401 1.039 0 2.094-.151 3.028-.435.033.469.107.926.218 1.37-.888.347-2.024.565-3.246.565-2.672 0-5-1.007-5-2.25zm0-2.5v-.652c1.146.918 3.109 1.402 5 1.402 1.127 0 2.275-.176 3.266-.509-.128.493-.21 1.002-.241 1.526-.854.298-1.903.483-3.025.483-2.672 0-5-1.007-5-2.25zm11-11v-.652c1.146.918 3.109 1.402 5 1.402 1.892 0 3.854-.484 5-1.402v.652c0 1.243-2.327 2.25-5 2.25-2.672 0-5-1.007-5-2.25zm0 5v-.652c.713.571 1.744.974 2.876 1.197-.661.183-1.287.446-1.868.783-.622-.373-1.008-.829-1.008-1.328zm0-2.5v-.651c1.146.917 3.109 1.401 5 1.401 1.892 0 3.854-.484 5-1.401v.651c0 1.243-2.327 2.25-5 2.25-2.672 0-5-1.007-5-2.25z" />
                     </svg>
-                    <h2 className="home__subtitle">Economico</h2>
+                    <h2 className="home__subtitle">Económico</h2>
                 </div>
-                <div className="home__icon--big home__icon--support">
-                    <svg className="home__icon-img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div className="home__icon--big home__icon--support" data-aos="flip-left">
+                <svg className="home__icon-img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style={{ stopColor: '#6E39E9', stopOpacity: 1 }} />
@@ -59,8 +70,8 @@ export default function HomeSection() {
                     </svg>
                     <h2 className="home__subtitle">Soporte</h2>
                 </div>
-                <div className="home__icon home__icon--dollars">
-                    <svg className="home__icon-img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd"
+                <div className="home__icon home__icon--dollars" data-aos="flip-right">
+                <svg className="home__icon-img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd"
                         clipRule="evenodd">
                         <defs>
                             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -72,9 +83,9 @@ export default function HomeSection() {
                             d="M7 24h-5v-9h5v1.735c.638-.198 1.322-.495 1.765-.689.642-.28 1.259-.417 1.887-.417 1.214 0 2.205.499 4.303 1.205.64.214 1.076.716 1.175 1.306 1.124-.863 2.92-2.257 2.937-2.27.357-.284.773-.434 1.2-.434.952 0 1.751.763 1.751 1.708 0 .49-.219.977-.627 1.356-1.378 1.28-2.445 2.233-3.387 3.074-.56.501-1.066.952-1.548 1.393-.749.687-1.518 1.006-2.421 1.006-.405 0-.832-.065-1.308-.2-2.773-.783-4.484-1.036-5.727-1.105v1.332zm-1-8h-3v7h3v-7zm1 5.664c2.092.118 4.405.696 5.999 1.147.817.231 1.761.354 2.782-.581 1.279-1.172 2.722-2.413 4.929-4.463.824-.765-.178-1.783-1.022-1.113 0 0-2.961 2.299-3.689 2.843-.379.285-.695.519-1.148.519-.107 0-.223-.013-.349-.042-.655-.151-1.883-.425-2.755-.701-.575-.183-.371-.993.268-.858.447.093 1.594.35 2.201.52 1.017.281 1.276-.867.422-1.152-.562-.19-.537-.198-1.889-.665-1.301-.451-2.214-.753-3.585-.156-.639.278-1.432.616-2.164.814v3.888zm3.79-19.913l3.21-1.751 7 3.86v7.677l-7 3.735-7-3.735v-7.719l3.784-2.064.002-.005.004.002zm2.71 6.015l-5.5-2.864v6.035l5.5 2.935v-6.106zm1 .001v6.105l5.5-2.935v-6l-5.5 2.83zm1.77-2.035l-5.47-2.848-2.202 1.202 5.404 2.813 2.268-1.167zm-4.412-3.425l5.501 2.864 2.042-1.051-5.404-2.979-2.139 1.166z"
                             fill="url(#grad1)" />
                     </svg>
-                    <h2 className="home__subtitle">Efectivo</h2>
+                    <h2 className="home__subtitle">Precios Bajos</h2>
                 </div>
             </div>
         </>
-    )
+    );
 }
