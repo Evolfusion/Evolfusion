@@ -386,7 +386,7 @@ header {
   color: #ED1E79;
   font-family: var(--title-typography);
   font-weight: bold;
-  font-size: var(--title-size);
+  font-size: var(--title-size) ;
 }
 
 .services__subtitle-servi {
@@ -1469,9 +1469,6 @@ margin: var(--container-margin);
 
   .about__img-container--left {
       height: 300px;
-  }
-  .about__title{
-    font-size: var(--desktop-description);
   }
   .about__description,
   .about__description--last,
