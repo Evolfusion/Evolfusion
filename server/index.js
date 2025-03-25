@@ -1,4 +1,3 @@
-import { Resend } from 'resend';
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';  // Importación correcta
@@ -8,13 +7,30 @@ import Info from './model/messageModel.js';
 
 dotenv.config();
 const app = express();
-
+const resend = new Resend(process.env.RESEND_API_KEY);
 // Configurar CORS
+// CORS Config
 app.use(cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST"], // Métodos permitidos
-    allowedHeaders: ["Content-Type"]
+    origin: 'https://www.evolfusion.com',  // Permitir solicitudes solo de este origen
+    methods: ['GET', 'POST','OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,  // Asegura que las cookies y cabeceras de autenticación se puedan enviar
 }));
+
+app.options('*', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://www.evolfusion.com');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.sendStatus(204);  // No devuelve contenido
+});
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://www.evolfusion.com');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
+});
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -99,8 +115,9 @@ app.post("/send-form", async (req, res) => {
     }
 });
 
-const port = 3000;
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Servidor escuchando en el puerto ${port}`);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Servidor corriendo en https://evolfusion.com`);
 });
+
 
