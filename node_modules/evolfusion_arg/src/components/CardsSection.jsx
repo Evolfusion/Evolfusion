@@ -1,6 +1,12 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {CardsPlanes} from '../data/data';
 
 export default function CardsSection() {
+    useEffect(() => {
+                AOS.init({ duration: 2000, once: true });
+            }, []);
     return (
         <>
             <div className="cards__quote">
@@ -10,7 +16,7 @@ export default function CardsSection() {
             <div className="cards__container">
                 <div className="cards__subcontainer">
                     {CardsPlanes.map((plan) =>(
-                        <article key={plan.id} className="cards__item">
+                        <article key={plan.id} className="cards__item" data-aos="fade-up">
                         <div className="cards__container-title">
                             <h3 className="cards__item-title">{plan.title}</h3>
                         </div>
