@@ -1,70 +1,95 @@
-import { Resend } from 'resend';
 import express from 'express';
 import dotenv from 'dotenv';
-import './db.js';  // Esto es correcto si 'db.js' está en el mismo directorio que 'index.js'
-import cors from 'cors';
+import cors from 'cors';  // Importación correcta
+import './db.js';
+import { Resend } from 'resend';
 import Info from './model/messageModel.js';
 
-const resend = new Resend(process.env.RESEND_API_KEY); // Usar la clave API desde el .env
-
-// Configura dotenv para cargar las variables de entorno
 dotenv.config();
 const app = express();
+const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Configurar CORS
 app.use(cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST"], // Métodos permitidos
-    allowedHeaders: ["Content-Type"]
+  origin: 'https://www.evolfusion.com', // Origen permitido
+  methods: ['GET', 'POST', 'OPTIONS'], // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
+  credentials: true, // Si se usan cookies o autenticación basada en sesiones
 }));
-
 
 app.use(express.json());
 app.use(express.static('public'));
 
+// Rutas
 app.get('/api/info', async (req, res) => {
     try {
         const info = await Info.find();
         res.json(info);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: "Error al obtener los datos" });
+        res.status(500).json({ error: "Error al obtener los datos de la base de datos" });
     }
 });
 
+// Ruta para guardar la información en la base de datos
 app.post('/api/info', async (req, res) => {
     try {
         const { name, lastname, tel, email, message } = req.body;
 
+        // Validación de campos vacíos
         if (!name || !lastname || !tel || !email || !message) {
             return res.status(400).json({ msg: 'Por favor, completa todos los campos' });
         }
 
-        const info = new Info({
-            name: name.trim(),
-            lastname: lastname.trim(),
-            tel: tel.trim(),
-            email: email.trim(),
-            message: message.trim()
-        });
+        // Validación de formato de correo electrónico
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ msg: 'Por favor, ingresa un correo electrónico válido' });
+        }
 
+        // Validación de formato de teléfono
+        const telRegex = /^[0-9]{10}$/;
+        if (!telRegex.test(tel)) {
+            return res.status(400).json({ msg: 'Por favor, ingresa un número de teléfono válido (10 dígitos)' });
+        }
+
+        const info = new Info({ name, lastname, tel, email, message });
         await info.save();
         res.json({ msg: 'Mensaje guardado con éxito' });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: "Error al guardar el mensaje" });
+        res.status(500).json({ error: "Error al guardar el mensaje en la base de datos" });
     }
 });
 
-/* ENVÍO MAIL */
+// Ruta para enviar el correo
 app.post("/send-form", async (req, res) => {
     const { name, lastname, tel, email, message } = req.body;
 
     try {
+        // Validación de campos vacíos
+        if (!name || !lastname || !tel || !email || !message) {
+            return res.status(400).json({ msg: 'Por favor, completa todos los campos' });
+        }
+
+        // Validación de formato de correo electrónico
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ msg: 'Por favor, ingresa un correo electrónico válido' });
+        }
+
+        // Validación de formato de teléfono
+        const telRegex = /^[0-9]{10}$/;
+        if (!telRegex.test(tel)) {
+            return res.status(400).json({ msg: 'Por favor, ingresa un número de teléfono válido (10 dígitos)' });
+        }
+
+        // Envío del correo utilizando la API de Resend
         const respuesta = await resend.emails.send({
-            from: "onboarding@resend.dev", // Email de prueba de Resend
+            from: "onboarding@resend.dev",
             to: "evolfusion.arg@gmail.com",
             subject: "Asesoramiento",
-            text: `Nombre: ${name}\nApellido: ${lastname}\nTelefono: ${tel}\nCorreo: ${email}\nMensaje: ${message}`
+            text: `Nombre: ${name}\nApellido: ${lastname}\nTeléfono: ${tel}\nCorreo: ${email}\nMensaje: ${message}`
         });
 
         console.log("Correo enviado con éxito:", respuesta);
@@ -75,7 +100,9 @@ app.post("/send-form", async (req, res) => {
     }
 });
 
-const port = 3000;
+// Configuración del servidor en HTTPS en DonWeb
+const port = process.env.PORT || 3000;
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Servidor escuchando en el puerto ${port}`);
+    console.log(`Servidor corriendo en el puerto ${port}`);
 });
+
