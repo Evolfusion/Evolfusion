@@ -27,7 +27,7 @@ export default function useForm() {
       return;
     }
 
-    console.log('Info a enviar:', formData);
+    /* console.log('Info a enviar:', formData); */
 
     try {
       // Primera petición fetch
@@ -40,7 +40,7 @@ export default function useForm() {
       });
 
       const data1 = await response1.json();
-      console.log('Respuesta API Info:', data1);
+      /* console.log('Respuesta API Info:', data1); */
 
       // Segunda petición fetch
       const response2 = await fetch('https://www.evolfusion.com/send-form', {  // Se usa solo '/send-form'
@@ -52,7 +52,7 @@ export default function useForm() {
       });
 
       const data2 = await response2.json();
-      console.log('Respuesta API Send-Form:', data2);
+      /* console.log('Respuesta API Send-Form:', data2); */
       
       setFormData({
         name: '',
@@ -62,7 +62,7 @@ export default function useForm() {
         message: '',
       });
     } catch (error) {
-      console.error('Error en la solicitud:', error);
+      /* console.error('Error en la solicitud:', error); */
     }
   };
 

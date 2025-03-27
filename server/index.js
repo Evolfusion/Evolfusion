@@ -8,14 +8,29 @@ import Info from './model/messageModel.js';
 dotenv.config();
 const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Configurar CORS
+// CORS Config
 app.use(cors({
-  origin: 'https://www.evolfusion.com', // Origen permitido
-  methods: ['GET', 'POST', 'OPTIONS'], // Métodos permitidos
-  allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
-  credentials: true, // Si se usan cookies o autenticación basada en sesiones
+    origin: 'https://www.evolfusion.com',  // Permitir solicitudes solo de este origen
+    methods: ['GET', 'POST','OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,  // Asegura que las cookies y cabeceras de autenticación se puedan enviar
 }));
+
+app.options('*', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://www.evolfusion.com');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.sendStatus(204);  // No devuelve contenido
+});
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://www.evolfusion.com');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
+});
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -89,7 +104,7 @@ app.post("/send-form", async (req, res) => {
             from: "onboarding@resend.dev",
             to: "evolfusion.arg@gmail.com",
             subject: "Asesoramiento",
-            text: `Nombre: ${name}\nApellido: ${lastname}\nTeléfono: ${tel}\nCorreo: ${email}\nMensaje: ${message}`
+            text: 'Nombre:  ${name}\nApellido: ${lastname}\nTeléfono: ${tel}\nCorreo: ${email}\nMensaje: ${message}'
         });
 
         console.log("Correo enviado con éxito:", respuesta);
@@ -100,9 +115,7 @@ app.post("/send-form", async (req, res) => {
     }
 });
 
-// Configuración del servidor en HTTPS en DonWeb
 const port = process.env.PORT || 3000;
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Servidor corriendo en el puerto ${port}`);
+app.listen(port, () => {
+    console.log('Servidor corriendo en https://evolfusion.com');
 });
-
