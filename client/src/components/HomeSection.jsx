@@ -11,10 +11,9 @@ export default function HomeSection() {
         <>
             <article className="home">
                 <div className="home__container" data-aos="fade-up">
-                    <h1 className="home__title">Creamos tu sitio web</h1>
+                    <h1 className="home__title">Soluciones digitales</h1>
                     <p className="home__description">
-                        Nada de WordPress, nada de plantillas genéricas. Diseñamos páginas y aplicaciones web 100%
-                        personalizadas para optimizar la interacción con tus clientes y llevar tu negocio al siguiente nivel.
+                    Creamos experiencias digitales únicas y potentes. Todo lo que hacemos es 100% personalizado para que tu negocio se destaque, conecte mejor con tus clientes y crezca con fuerza en el mundo digital.
                     </p>
                     <a href="#services" aria-label="Ver nuestros servicios de programación y tecnologías digitales"
                         className="home__link">

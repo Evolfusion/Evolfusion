@@ -9,15 +9,10 @@ export default function AboutSection() {
             <div className="about_container">
                 <h2 className="about__title">SOBRE NOSOTROS</h2>
                 <p className="about__description">
-                    Somos un equipo de desarrolladores apasionados por crear diseños web modernos y personalizados.
-                    Cada miembro aporta su experiencia única para transformar tus ideas en sitios y aplicaciones web
-                    que se adaptan perfectamente a tus necesidades.
+                Somos un equipo apasionado por crear soluciones digitales modernas, auténticas y funcionales. Nos inspira la innovación, la tecnología y el compromiso con cada cliente. Escuchamos tus ideas, las transformamos en proyectos únicos y te acompañamos desde el inicio hasta después del lanzamiento.
                 </p>
                 <p className="about__description--last">
-                    Nuestra misión es impulsar tu empresa o emprendimiento ofreciendo soluciones innovadoras y de
-                    vanguardia. Desarrollamos cada proyecto con código 100% puro, sin el uso de plantillas ni
-                    plataformas como WordPress. Transformamos tus ideas en realidades digitales únicas, garantizando
-                    experiencias de usuario impecables y resultados sobresalientes para tu negocio.
+                También resolvemos problemas técnicos, reparamos tus equipos y te orientamos para que tomes decisiones digitales acertadas sin pagar de más. Trabajamos sin plantillas, con atención personalizada y un enfoque real en lo que tu negocio necesita.
                 </p>
             </div>
 
