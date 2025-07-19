@@ -16,22 +16,50 @@ export const servicesData = [
   },
   {
     id: 2,
-    title: "DISEÑO DE LANDING PAGES",
-    description: "Desarrollamos landing pages efectivas diseñadas para captar clientes potenciales y aumentar conversiones. Implementamos estrategias de diseño y marketing para generar impacto y dirigir a tus visitantes a la acción que deseas.",
-    imgSrc: "./img/icon/landing-pages.png",
-    imgAlt: "DISEÑO DE LANDING PAGES"
-  },
-  {
-    id: 3,
     title: "SITIOS WEB PROFESIONALES",
-    description: "Creamos sitios web profesionales a la medida, optimizados para ofrecer un diseño atractivo, una navegación fluida y un rendimiento excepcional. Nos enfocamos en brindar soluciones personalizadas que se adapten perfectamente a las necesidades de tu empresa o emprendimiento.",
+    description: "Desarrollamos sitios web y landing pages personalizados, optimizados para convertir visitantes en clientes. Combinamos diseño atractivo, navegación fluida y estrategia digital para que tu presencia online sea impactante, funcional y alineada a tus objetivos de negocio.",
     imgSrc: "./img/icon/web-profesionales.png",
     imgAlt: "SITIOS WEB PROFESIONALES"
   },
   {
-    id: 4,
+    id: 3,
     title: "SOPORTE Y MANTENIMIENTO",
     description: "Ofrecemos mantenimiento continuo para asegurar que tu sitio web funcione sin problemas. Desde actualizaciones de seguridad hasta mejoras en rendimiento y solución de errores, nos encargamos de mantener tu web siempre operativa y optimizada.",
+    imgSrc: "./img/icon/support.png",
+    imgAlt: "SOPORTE Y MANTENIMIENTO"
+  },
+  {
+    id: 4,
+    title: "SERVIDOR Y DOMINIO",
+    description: "Gestionamos tu dominio y alojamiento web para que tengas presencia online estable y segura. Nos encargamos de configuraciones técnicas, renovaciones, correos profesionales y todo lo necesario para que tu sitio esté siempre disponible.",
+    imgSrc: "./img/icon/landing-pages.png",
+    imgAlt: "DISEÑO DE LANDING PAGES"
+  },
+  {
+    id: 5,
+    title: "DISEÑO GRAFICO",
+    description: "Creamos piezas visuales que representan la identidad de tu marca. Desde logos hasta flyers, banners y más, nuestro diseño gráfico comunica profesionalismo y creatividad en cada detalle.",
+    imgSrc: "./img/icon/support.png",
+    imgAlt: "SOPORTE Y MANTENIMIENTO"
+  },
+  {
+    id: 6,
+    title: "MARKETING DIGITAL",
+    description: "Impulsamos tu negocio con estrategias digitales enfocadas en resultados. Publicidad online, posicionamiento, campañas efectivas y análisis de datos para atraer más clientes y aumentar tus ventas.",
+    imgSrc: "./img/icon/support.png",
+    imgAlt: "SOPORTE Y MANTENIMIENTO"
+  },
+  {
+    id: 7,
+    title: "COMMUNITY MANAGER",
+    description: "Administramos tus redes sociales con contenido estratégico y creativo. Construimos una comunidad activa alrededor de tu marca, generando interacción real y mejorando tu presencia digital día a día.",
+    imgSrc: "./img/icon/support.png",
+    imgAlt: "SOPORTE Y MANTENIMIENTO"
+  },
+  {
+    id: 8,
+    title: "REPARACIÓN DE COMPUTADORAS",
+    description: "Solucionamos problemas técnicos en computadoras de escritorio y notebooks. Ofrecemos diagnóstico sin costo, reparación de hardware y software, optimización del sistema y atención personalizada.",
     imgSrc: "./img/icon/support.png",
     imgAlt: "SOPORTE Y MANTENIMIENTO"
   }

@@ -1,31 +1,48 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { servicesData } from "../data/data"; // Importa los datos
+import useServicesCarousel from "../hooks/useServicesCarousel.js";
+/* import { ChevronLeft, ChevronRight } from 'lucide-react'; // opcional, si usás íconos */
 
 export default function ServicesSection() {
-     useEffect(() => {
-            AOS.init({ duration: 2000, once: true });
-        }, []);
+    const { services, trackRef, itemsRef, handlePrev, handleNext } = useServicesCarousel();
+
     return (
         <>
             <div className="services__container">
                 <h2 className="services__title-servi">NUESTROS SERVICIOS</h2>
                 <h3 className="services__subtitle-servi">No solo creamos sitios web</h3>
                 <p className="services__description-servi">
-                    Desarrollamos estrategias de marketing que impulsan tu visibilidad y optimizan tu retorno de inversión.
+                    Desarrollamos herramientas digitales que conectan tu marca con el mundo online de forma creativa y efectiva.
                 </p>
             </div>
-            <div className="services__articles">
-                {servicesData.map((service, index) => (
-                    <article key={index} className="services__article" data-aos="fade-up">
-                        <div className="services__icon">
-                            <img className="services__image" src={service.imgSrc} alt={service.imgAlt} />
-                        </div>
-                        <h2 className="services__title">{service.title}</h2>
-                        <p className="services__description">{service.description}</p>
-                    </article>
-                ))}
+
+            <div className="services__carousel-wrapper">
+                <button className="carousel__arrow left" onClick={handlePrev}>
+                    {/* Ícono o texto */}
+                    ‹
+                </button>
+
+                <div className="services__carousel-container" style={{ overflow: "hidden" }}>
+                    <div className="services__articles" ref={trackRef}>
+                        {services.map((service, index) => (
+                            <article
+                                key={index}
+                                className="services__article"
+                                ref={(el) => (itemsRef.current[index] = el)}
+                            >
+                                <div className="services__icon">
+                                    <img className="services__image" src={service.imgSrc} alt={service.imgAlt} />
+                                </div>
+                                <h2 className="services__title">{service.title}</h2>
+                                <p className="services__description">{service.description}</p>
+                                <a href="#">Solicitar información</a>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+
+                <button className="carousel__arrow right" onClick={handleNext}>
+                    {/* Ícono o texto */}
+                    ›
+                </button>
             </div>
         </>
     );

@@ -7,12 +7,12 @@ export default function AboutSection() {
 
         <article className="about">
             <div className="about_container">
-                <h2 className="about__title">SOBRE NOSOTROS</h2>
+                <h2 className="about__title">NUESTRA EMPRESA</h2>
                 <p className="about__description">
-                Somos un equipo apasionado por crear soluciones digitales modernas, auténticas y funcionales. Nos inspira la innovación, la tecnología y el compromiso con cada cliente. Escuchamos tus ideas, las transformamos en proyectos únicos y te acompañamos desde el inicio hasta después del lanzamiento.
+                Evolfusion crea sitios web modernos y personalizados para que negocios y emprendedores se destaquen en el mundo digital, ofreciendo además otros servicios digitales diseñados para potenciar su presencia online.
                 </p>
                 <p className="about__description--last">
-                También resolvemos problemas técnicos, reparamos tus equipos y te orientamos para que tomes decisiones digitales acertadas sin pagar de más. Trabajamos sin plantillas, con atención personalizada y un enfoque real en lo que tu negocio necesita.
+                Nuestra misión es impulsar empresas y emprendimientos ofreciendo soluciones digitales integrales, que incluyen desarrollo web, marketing, diseño, gestión de redes y otros servicios pensados para potenciar su crecimiento y presencia online.
                 </p>
             </div>
 
