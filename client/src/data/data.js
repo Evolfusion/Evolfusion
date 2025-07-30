@@ -62,7 +62,14 @@ export const servicesData = [
     description: "Solucionamos problemas técnicos en computadoras de escritorio y notebooks. Ofrecemos diagnóstico sin costo, reparación de hardware y software, optimización del sistema y atención personalizada.",
     imgSrc: "./img/icon/support.png",
     imgAlt: "SOPORTE Y MANTENIMIENTO"
-  }
+  },
+  {
+  id: 9,
+  title: "REPARACIÓN DE CELULARES",
+  description: "Reparamos todo tipo de celulares: cambio de pantallas, baterías, conectores de carga, y resolución de problemas de software. Ofrecemos diagnóstico sin costo, repuestos originales y garantía en todas nuestras reparaciones.",
+  imgSrc: "./img/icon/mobile-repair.png",
+  imgAlt: "REPARACIÓN DE CELULARES"
+}
 ];
 
 export const teamMembers = [

@@ -4,8 +4,7 @@ import {
     HomeSection, 
     AboutSection, 
     ServicesSection, 
-    InfoSection, 
-    CardsSection, 
+    InfoSection,
     PlanSection, 
     ConversationSection, 
     FormSection, 
@@ -38,11 +37,7 @@ function App() {
                 <section className="info">
                     <InfoSection />
                 </section>
-
-                <section className="cards" id="planes">
-                    <CardsSection />
-                </section>
-
+                
                 <section className="plan">
                     <PlanSection />
                 </section>
