@@ -10,7 +10,7 @@ export default function ServicesSection() {
                 <h2 className="services__title-servi">NUESTROS SERVICIOS</h2>
                 <h3 className="services__subtitle-servi">No solo creamos sitios web</h3>
                 <p className="services__description-servi">
-                    Desarrollamos herramientas digitales que conectan tu marca con el mundo online de forma creativa y efectiva.
+                    Ofrecemos soluciones digitales y tecnológicas integrales para impulsar el crecimiento de tu negocio.
                 </p>
             </div>
 
@@ -32,8 +32,8 @@ export default function ServicesSection() {
                                     <img className="services__image" src={service.imgSrc} alt={service.imgAlt} />
                                 </div>
                                 <h2 className="services__title">{service.title}</h2>
-                                <p className="services__description">{service.description}</p>
-                                <a href="#">Solicitar información</a>
+                                <p className="services__description" >{service.description}</p>
+                                <a href={service.link} className="services__button" target="_blank">Solicitar información</a>
                             </article>
                         ))}
                     </div>

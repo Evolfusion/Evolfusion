@@ -8,7 +8,7 @@ export default function FooterSection() {
                     <img className="footer__logo" src="img/logo-sin-fondo.png" alt="Logo Evolfusion" />
                     <div className="footer__information">
                         <p className="footer__text">
-                            Somos un equipo apasionado por el desarrollo web, creando soluciones digitales a medida para impulsar tu negocio. ¡Hablemos y hagámoslo realidad!
+                           Somos un equipo apasionado por el desarrollo web y los servicios técnicos, creando soluciones digitales a medida para impulsar tu negocio. ¡Hablemos y hagámoslo realidad!
                         </p>
                         <div className="footer__socialMedia">
                             {Footer.socialLinks.map((link, index) => (
