@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function useForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    lastname: '',
-    tel: '',
-    email: '',
-    message: '',
+    name: "",
+    lastname: "",
+    tel: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -17,52 +18,42 @@ export default function useForm() {
     }));
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async () => {
+    const { name, lastname, tel, email, message } = formData;
 
     // Validación de campos vacíos
-    const { name, lastname, tel, email, message } = formData;
     if (!name || !lastname || !tel || !email || !message) {
-      alert('Please fill all the fields');
-      return;
+      alert("Por favor, completa todos los campos.");
+      return false; // Para indicar error
     }
 
-    /* console.log('Info a enviar:', formData); */
-
     try {
-      // Primera petición fetch
-      const response1 = await fetch('https://www.evolfusion.com/api/info', {  // Se usa solo '/api/info'
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      await emailjs.send(
+        "evolfusion_ar1234",   // Reemplaza con tu Service ID
+        "template_evolfusion",  // Reemplaza con tu Template ID
+        {
+          name: formData.name,
+          lastname: formData.lastname,
+          tel: formData.tel,
+          email: formData.email,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
-      });
+        "YXUA4C14a2k6fzJMh"    // Reemplaza con tu Public Key
+      );
 
-      const data1 = await response1.json();
-      /* console.log('Respuesta API Info:', data1); */
-
-      // Segunda petición fetch
-      const response2 = await fetch('https://www.evolfusion.com/send-form', {  // Se usa solo '/send-form'
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data2 = await response2.json();
-      /* console.log('Respuesta API Send-Form:', data2); */
-      
+      // Limpiar el formulario
       setFormData({
-        name: '',
-        lastname: '',
-        tel: '',
-        email: '',
-        message: '',
+        name: "",
+        lastname: "",
+        tel: "",
+        email: "",
+        message: "",
       });
+
+      return true; // Éxito
     } catch (error) {
-      /* console.error('Error en la solicitud:', error); */
+      console.error("Error al enviar:", error);
+      return false; // Error
     }
   };
 

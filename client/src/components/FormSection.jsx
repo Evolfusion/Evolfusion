@@ -9,32 +9,37 @@ export default function FormSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
 
-  // Función para validar que los campos no estén vacíos
   const isFormValid = () => {
     return (
-      formData.name.trim() !== "" &&
-      formData.lastname.trim() !== "" &&
-      formData.tel.trim() !== "" &&
-      formData.email.trim() !== "" &&
-      formData.message.trim() !== ""
+      formData.name.trim() &&
+      formData.lastname.trim() &&
+      formData.tel.trim() &&
+      formData.email.trim() &&
+      formData.message.trim()
     );
   };
 
-  // Manejar el envío del formulario
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     if (!isFormValid()) {
-      setIsErrorModalOpen(true); // Muestra modal de error si hay campos vacíos
+      setIsErrorModalOpen(true);
       return;
     }
 
-    await handleSubmit(e); // Llamamos a la función de envío solo si el formulario es válido
-    setIsModalOpen(true); // Mostramos la modal de éxito
+    const success = await handleSubmit();
+
+    if (success) {
+      setIsModalOpen(true);
+    } else {
+      setIsErrorModalOpen(true);
+    }
   };
-   useEffect(() => {
-          AOS.init({ duration: 2000, once: true });
-      }, []);
+
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true });
+  }, []);
+
   return (
     <>
       <div className="links">
@@ -121,12 +126,15 @@ export default function FormSection() {
           </form>
         </div>
       </article>
- {/* Modal de éxito */}
- {isModalOpen && (
+
+      {/* Modal de éxito */}
+      {isModalOpen && (
         <div className="modal">
           <div className="modal__content">
             <h2 className="modal__title">¡Mensaje enviado!</h2>
-            <p className="modal__description">Gracias por contactarnos. Nos comunicaremos contigo a la brevedad.</p>
+            <p className="modal__description">
+              Gracias por contactarnos. Nos comunicaremos contigo a la brevedad.
+            </p>
             <button onClick={() => setIsModalOpen(false)}>Cerrar</button>
           </div>
         </div>
@@ -136,8 +144,10 @@ export default function FormSection() {
       {isErrorModalOpen && (
         <div className="modal">
           <div className="modal__content">
-            <h2 className="modal__title">¡Faltan datos!</h2>
-            <p className="modal__description">Por favor, completa todos los campos antes de enviar el formulario.</p>
+            <h2 className="modal__title">Error</h2>
+            <p className="modal__description">
+              Por favor, completa todos los campos o verifica la conexión antes de enviar.
+            </p>
             <button onClick={() => setIsErrorModalOpen(false)}>Cerrar</button>
           </div>
         </div>
