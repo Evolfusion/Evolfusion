@@ -1521,7 +1521,7 @@ header {
 }
 
 /* Forzar orientación vertical en dispositivos móviles */
-@media screen and (max-width: 1000px) and (orientation: landscape) {
+/* @media screen and (max-width: 1000px) and (orientation: landscape) {
   body {
     transform: rotate(-90deg);
     transform-origin: left top;
@@ -1536,4 +1536,4 @@ header {
 
 .img {
   width: 30px;
-}
+} */

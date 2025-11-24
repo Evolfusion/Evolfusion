@@ -11,6 +11,7 @@ export default function Navbars({ isOpen, toggleMenu }) {
                         src="img/logo-sin-fondo.png"
                         alt="Logo de Evolfusion"
                         className="logo__img"
+                        
                     />
                 </div>
 
